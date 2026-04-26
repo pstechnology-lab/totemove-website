@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ToteMove",
+      "runtimeExecutable": "C:/Users/pstec/AppData/Local/Programs/cursor/resources/app/resources/helpers/node.exe",
+      "runtimeArgs": ["serve.js"],
+      "port": 3000
+    }
+  ]
+}

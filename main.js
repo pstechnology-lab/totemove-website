@@ -90,12 +90,48 @@ form.addEventListener('submit', e => {
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending…';
 
-  /* In production replace this timeout with a real fetch() to your form endpoint. */
-  setTimeout(() => {
-    form.querySelectorAll('.form-row, .form-group, .form-submit').forEach(el => {
-      el.style.display = 'none';
+  const formError = document.getElementById('formError');
+  if (formError) formError.hidden = true;
+
+  fetch('https://formspree.io/f/mdabowrv', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: new FormData(form),
+  })
+    .then(res => res.json().then(data => ({ ok: res.ok, data })))
+    .then(({ ok, data }) => {
+      if (ok) {
+        form.querySelectorAll('.form-row, .form-group, .form-submit').forEach(el => {
+          el.style.display = 'none';
+        });
+        successMsg.hidden = false;
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        const msg = data?.errors?.map(e => e.message).join(' ') || 'Something went wrong. Please try again.';
+        showFormError(msg);
+        resetSubmitBtn();
+      }
+    })
+    .catch(() => {
+      showFormError('Could not send your request — please check your connection and try again.');
+      resetSubmitBtn();
     });
-    successMsg.hidden = false;
-    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 800);
 });
+
+function resetSubmitBtn() {
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Send Booking Request';
+}
+
+function showFormError(msg) {
+  let el = document.getElementById('formError');
+  if (!el) {
+    el = document.createElement('p');
+    el.id = 'formError';
+    el.setAttribute('role', 'alert');
+    el.style.cssText = 'color:#dc2626;font-size:.9rem;margin-top:.5rem;';
+    document.querySelector('.form-submit').appendChild(el);
+  }
+  el.textContent = msg;
+  el.hidden = false;
+}

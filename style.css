@@ -251,9 +251,25 @@ button { cursor: pointer; font: inherit; border: none; background: none; }
   border-radius: 5px 5px 0 0;
   opacity: .25;
 }
-.tote-1 { height: 68px; top: 0;    left: 20px; background: var(--teal-light); }
-.tote-2 { height: 68px; top: 76px; left: 20px; background: var(--white); }
-.tote-3 { height: 68px; top: 152px; left: 20px; background: var(--teal-light); }
+.tote-1 { height: 68px; top: 0;     left: 20px; background: var(--teal-light); display: flex; align-items: center; justify-content: center; }
+.tote-2 { height: 68px; top: 76px;  left: 20px; background: var(--white);      display: flex; align-items: center; justify-content: center; }
+.tote-3 { height: 68px; top: 152px; left: 20px; background: var(--teal-light); display: flex; align-items: center; justify-content: center; }
+
+.tote-label {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: .02em;
+  margin-top: 14px; /* push below the lid stripe */
+  user-select: none;
+}
+.tote-label--or {
+  color: var(--blue);
+  font-size: .85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
 
 .dolly {
   position: absolute;

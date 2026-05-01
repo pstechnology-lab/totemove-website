@@ -242,13 +242,14 @@ button { cursor: pointer; font: inherit; border: none; background: none; }
   border: 3px solid var(--blue);
   background: var(--white);
   box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
-.tote::after {
+/* lid stripe sits BEFORE the text in flow so label needs no tricks */
+.tote::before {
   content: '';
   display: block;
   height: 14px;
   background: var(--blue);
-  border-radius: 5px 5px 0 0;
   opacity: .25;
 }
 .tote-1 { height: 68px; top: 0;     left: 20px; background: var(--teal-light); }
@@ -256,14 +257,10 @@ button { cursor: pointer; font: inherit; border: none; background: none; }
 .tote-3 { height: 68px; top: 152px; left: 20px; background: var(--teal-light); }
 
 .tote-label {
-  position: absolute;
-  top: 14px; /* sit below the lid stripe */
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  height: 54px;        /* 68px tote - 14px lid = 54px */
+  line-height: 54px;   /* vertically centres single-line text */
+  text-align: center;
   font-size: .95rem;
   font-weight: 700;
   color: var(--teal);

@@ -3,20 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ToteMove: moving tote rentals in Brampton, Bolton, Georgetown, Orangeville, Mississauga, and Acton. We deliver, you move, we pick up. Dollies included." />
-  <title>ToteMove | Moving Tote Rentals in Brampton &amp; Area</title>
+
+  <!-- Primary SEO -->
+  <title>ToteMove | Moving Tote Rentals in Brampton &amp; Area — Delivered to Your Door</title>
+  <meta name="description" content="Rent industrial-strength plastic moving totes with a dolly included, delivered to your door in Brampton, Mississauga, Caledon &amp; area. Flat-rate from $119. No cardboard. No hassle." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://totemove.ca/" />
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://totemove.ca/" />
+  <meta property="og:title" content="ToteMove | Moving Tote Rentals in Brampton &amp; Area" />
+  <meta property="og:description" content="Industrial-strength moving totes with a dolly included. Delivered to your door. Flat-rate pricing from $119. Serving Brampton, Mississauga, Caledon &amp; area." />
+  <meta property="og:image" content="https://totemove.ca/logo.png" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:site_name" content="ToteMove" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ToteMove | Moving Tote Rentals in Brampton" />
+  <meta name="twitter:description" content="Rent industrial totes for your move or reno. Dolly included, flat-rate pricing, delivered to your door." />
+  <meta name="twitter:image" content="https://totemove.ca/logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://formspree.io" />
+
+  <!-- Cloudflare Web Analytics — replace YOUR_TOKEN with token from Cloudflare Pages dashboard → Analytics -->
+  <!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"YOUR_TOKEN"}'></script> -->
+
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ToteMove",
+    "description": "Moving tote rentals in Brampton and surrounding area. Industrial-strength plastic totes with dolly included. Flat-rate pricing from $119.",
+    "url": "https://totemove.ca",
+    "telephone": "+14168450290",
+    "email": "hello@totemove.ca",
+    "logo": "https://totemove.ca/logo.png",
+    "image": "https://totemove.ca/logo.png",
+    "priceRange": "$119–$389",
+    "currenciesAccepted": "CAD",
+    "paymentAccepted": "Cash, Credit Card, E-Transfer",
+    "areaServed": [
+      {"@type": "City", "name": "Brampton"},
+      {"@type": "City", "name": "Bolton"},
+      {"@type": "City", "name": "Georgetown"},
+      {"@type": "City", "name": "Orangeville"},
+      {"@type": "City", "name": "Mississauga"},
+      {"@type": "City", "name": "Acton"},
+      {"@type": "City", "name": "Caledon"},
+      {"@type": "City", "name": "Erin"}
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brampton",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Tote Rental Packages",
+      "itemListElement": [
+        {"@type": "Offer", "name": "Studio / 1-Bedroom Package", "price": "119", "priceCurrency": "CAD"},
+        {"@type": "Offer", "name": "2-Bedroom Package", "price": "189", "priceCurrency": "CAD"},
+        {"@type": "Offer", "name": "3-Bedroom Package", "price": "229", "priceCurrency": "CAD"},
+        {"@type": "Offer", "name": "4-Bedroom Package", "price": "299", "priceCurrency": "CAD"},
+        {"@type": "Offer", "name": "5-Bedroom Package", "price": "389", "priceCurrency": "CAD"}
+      ]
+    }
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How far in advance should I book?",
+        "acceptedAnswer": {"@type": "Answer", "text": "We recommend booking at least 3–5 days in advance, especially for weekend move dates which fill up quickly. Same-week bookings are sometimes available — contact us to check."}
+      },
+      {
+        "@type": "Question",
+        "name": "How clean are the totes?",
+        "acceptedAnswer": {"@type": "Answer", "text": "All totes are thoroughly cleaned and sanitized between every rental. We inspect each one before delivery to ensure it's in great condition."}
+      },
+      {
+        "@type": "Question",
+        "name": "What if I need more than 7 days?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No problem — just contact us before your rental period ends and we'll arrange an extension. Extended rental rates apply."}
+      },
+      {
+        "@type": "Question",
+        "name": "Do you deliver on weekends?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes, we deliver and pick up 7 days a week, including weekends and holidays. Weekend dates do book up faster, so reserve yours early."}
+      },
+      {
+        "@type": "Question",
+        "name": "What if a tote gets damaged?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Normal wear is expected and covered. If a tote is damaged beyond normal use, we'll discuss it with you — we're reasonable people and won't surprise you with hidden fees."}
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to be home for delivery or pickup?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. Many customers leave instructions for a safe drop-off location. We'll coordinate with you in advance to make it as convenient as possible."}
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ===== NAV ===== -->
   <header class="site-header">
     <div class="container nav-inner">
       <a class="logo" href="#">Tote<span>Move</span></a>
-      <nav>
+      <nav aria-label="Main navigation">
         <a href="#how-it-works">How It Works</a>
         <a href="#packages">Pricing</a>
         <a href="#service-area">Service Area</a>
+        <a href="tel:+14168450290" class="nav-phone">(416) 845-0290</a>
         <a href="#booking" class="btn btn-outline">Book Now</a>
       </nav>
       <button class="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -27,11 +151,12 @@
       <a href="#how-it-works">How It Works</a>
       <a href="#packages">Pricing</a>
       <a href="#service-area">Service Area</a>
+      <a href="tel:+14168450290">(416) 845-0290</a>
       <a href="#booking">Book Now</a>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- ===== HERO ===== -->
     <section class="hero">
@@ -42,7 +167,7 @@
           <a href="#booking" class="btn btn-primary btn-lg">Book Now</a>
         </div>
         <div class="hero-visual">
-          <img src="logo.png" alt="ToteMove logo" class="hero-logo" />
+          <img src="logo.png" alt="ToteMove — Rent Totes. Move Smarter." class="hero-logo" width="500" height="500" loading="eager" />
         </div>
       </div>
     </section>
@@ -274,6 +399,49 @@
       </div>
     </section>
 
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="reviews" class="section-teal">
+      <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-sub">Real people. Real moves. Real simple.</p>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"We were dreading our move from Brampton to Mississauga, but ToteMove made packing so much easier. The totes are huge, sturdy, and the dolly saved our backs. Would 100% use again."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">S</div>
+              <div>
+                <strong>Sarah M.</strong>
+                <span>Brampton, ON</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Used ToteMove during our kitchen renovation to store everything room by room. Totes arrived the night before, pickup was right on time. Honestly the easiest part of the whole reno."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">J</div>
+              <div>
+                <strong>Jason T.</strong>
+                <span>Caledon, ON</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Our realtor recommended ToteMove for staging and it was a game changer. Packed up the clutter in an afternoon, house looked amazing for showings, and unpacking after we sold was effortless."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">M</div>
+              <div>
+                <strong>Michelle K.</strong>
+                <span>Georgetown, ON</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== SERVICE AREA ===== -->
     <section id="service-area" class="section-teal-light">
       <div class="container">
@@ -333,6 +501,70 @@
       </div>
     </section>
 
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="section-light">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub">Everything you need to know before you book.</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+              How far in advance should I book?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-1" role="region">
+              <p>We recommend booking at least 3–5 days in advance, especially for weekend move dates which fill up quickly. Same-week bookings are sometimes available — contact us to check availability.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+              How clean are the totes?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-2" role="region">
+              <p>All totes are thoroughly cleaned and sanitized between every rental. We inspect each one before delivery to ensure it is in great condition and ready to use.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+              What if I need more than 7 days?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-3" role="region">
+              <p>No problem. Just contact us before your rental period ends and we will arrange an extension. Extended rental rates apply and we will work out a fair arrangement with you.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+              Do you deliver on weekends?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-4" role="region">
+              <p>Yes, we deliver and pick up 7 days a week, including weekends and holidays. Weekend dates do fill up faster, so we recommend reserving yours early.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+              What if a tote gets damaged?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-5" role="region">
+              <p>Normal wear and tear is expected and covered. If a tote is damaged beyond normal use, we will discuss it with you directly. We are reasonable people and will never surprise you with hidden fees.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+              Do I need to be home for delivery or pickup?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-6" role="region">
+              <p>Not necessarily. Many customers leave instructions for a safe drop-off location. We coordinate with you in advance to make delivery and pickup as convenient as possible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== BOOKING FORM ===== -->
     <section id="booking" class="section-light">
       <div class="container">
@@ -362,9 +594,9 @@
               <select id="home-size" name="home-size" required>
                 <option value="" disabled selected>Select your home size…</option>
                 <option value="studio">Studio / 1-Bedroom - $119</option>
-                <option value="2bed">2-Bedroom - $179</option>
-                <option value="3bed">3-Bedroom - $239</option>
-                <option value="4bed">4-Bedroom - $309</option>
+                <option value="2bed">2-Bedroom - $189</option>
+                <option value="3bed">3-Bedroom - $229</option>
+                <option value="4bed">4-Bedroom - $299</option>
                 <option value="5bed">5-Bedroom - $389</option>
                 <option value="other">Other / Not Sure</option>
               </select>
@@ -387,7 +619,7 @@
             <textarea id="notes" name="notes" rows="4" placeholder="e.g. elevator access, long driveway, special items…"></textarea>
           </div>
           <div class="form-submit">
-            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Send Booking Request</button>
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Reserve My Totes</button>
             <p class="form-privacy">We'll only use your info to confirm your booking. No spam, ever.</p>
           </div>
           <div class="form-success" id="formSuccess" hidden>
@@ -416,7 +648,7 @@
         <h4>Get in Touch</h4>
         <a href="tel:+14168450290">(416) 845-0290</a>
         <a href="mailto:hello@totemove.ca">hello@totemove.ca</a>
-        <a href="https://totemove.ca" target="_blank" rel="noopener">totemove.ca</a>
+        <a href="https://totemove.ca" target="_blank" rel="noopener noreferrer">totemove.ca</a>
       </div>
       <div class="footer-links">
         <h4>Quick Links</h4>
@@ -433,6 +665,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

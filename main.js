@@ -120,8 +120,31 @@ form.addEventListener('submit', e => {
 
 function resetSubmitBtn() {
   submitBtn.disabled = false;
-  submitBtn.textContent = 'Send Booking Request';
+  submitBtn.textContent = 'Reserve My Totes';
 }
+
+/* ===== FAQ ACCORDION ===== */
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    const answerId = btn.getAttribute('aria-controls');
+    const answer = document.getElementById(answerId);
+
+    // Collapse all others
+    document.querySelectorAll('.faq-question').forEach(other => {
+      if (other !== btn) {
+        other.setAttribute('aria-expanded', 'false');
+        const otherId = other.getAttribute('aria-controls');
+        const otherAnswer = document.getElementById(otherId);
+        if (otherAnswer) otherAnswer.classList.remove('open');
+      }
+    });
+
+    // Toggle clicked one
+    btn.setAttribute('aria-expanded', String(!expanded));
+    if (answer) answer.classList.toggle('open', !expanded);
+  });
+});
 
 function showFormError(msg) {
   let el = document.getElementById('formError');

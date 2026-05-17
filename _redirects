@@ -1,5 +1,2 @@
-# Redirect www → non-www (permanent)
-https://www.totemove.ca/* https://totemove.ca/:splat 301
-
-# Redirect /index.html → / to avoid duplicate content
+# Redirect /index.html -> / to avoid duplicate content
 /index.html / 301

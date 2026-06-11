@@ -628,7 +628,7 @@ details summary::-webkit-details-marker { display: none; }
 
 .locations-eyebrow {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--cyan);

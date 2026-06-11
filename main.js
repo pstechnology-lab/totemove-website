@@ -16,7 +16,7 @@ mobileNav.querySelectorAll('a').forEach(link => {
   });
 });
 
-/* ===== SMOOTH SCROLL FOR ANCHOR LINKS ===== */
+/* ===== SMOOTH SCROLL ===== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
     const target = document.querySelector(anchor.getAttribute('href'));
@@ -28,13 +28,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ===== HEADER SHADOW ON SCROLL ===== */
-const header = document.querySelector('.site-header');
-window.addEventListener('scroll', () => {
-  header.style.boxShadow = window.scrollY > 8
-    ? '0 2px 12px rgba(26,122,110,.12)'
-    : '';
-}, { passive: true });
+/* ===== CITY TOGGLE ===== */
+const cityBtns = document.querySelectorAll('.city-btn');
+const locationSubCity = document.getElementById('location-sub-city');
+
+cityBtns.forEach(btn => {
+  btn.addEventListener('click', e => {
+    if (!btn.classList.contains('active')) {
+      e.preventDefault();
+      cityBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (locationSubCity) {
+        locationSubCity.textContent = `25 min from ${btn.textContent.trim()}.`;
+      }
+    }
+    // Second click on already-active button follows the link normally
+  });
+});
 
 /* ===== BOOKING FORM ===== */
 const form = document.getElementById('bookingForm');
@@ -53,7 +63,7 @@ const validators = {
   'move-date': v => {
     if (!v) return 'Please select a move date.';
     const chosen = new Date(v + 'T00:00:00');
-    const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate() + 1); tomorrow.setHours(0,0,0,0);
+    const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate() + 1); tomorrow.setHours(0, 0, 0, 0);
     return chosen >= tomorrow ? '' : 'Move date must be at least tomorrow.';
   },
 };
@@ -120,31 +130,8 @@ form.addEventListener('submit', e => {
 
 function resetSubmitBtn() {
   submitBtn.disabled = false;
-  submitBtn.textContent = 'Reserve My Totes';
+  submitBtn.textContent = 'Reserve My Totes →';
 }
-
-/* ===== FAQ ACCORDION ===== */
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    const answerId = btn.getAttribute('aria-controls');
-    const answer = document.getElementById(answerId);
-
-    // Collapse all others
-    document.querySelectorAll('.faq-question').forEach(other => {
-      if (other !== btn) {
-        other.setAttribute('aria-expanded', 'false');
-        const otherId = other.getAttribute('aria-controls');
-        const otherAnswer = document.getElementById(otherId);
-        if (otherAnswer) otherAnswer.classList.remove('open');
-      }
-    });
-
-    // Toggle clicked one
-    btn.setAttribute('aria-expanded', String(!expanded));
-    if (answer) answer.classList.toggle('open', !expanded);
-  });
-});
 
 function showFormError(msg) {
   let el = document.getElementById('formError');
@@ -152,7 +139,7 @@ function showFormError(msg) {
     el = document.createElement('p');
     el.id = 'formError';
     el.setAttribute('role', 'alert');
-    el.style.cssText = 'color:#dc2626;font-size:.9rem;margin-top:.5rem;';
+    el.style.cssText = 'color:#dc2626;font-size:.85rem;margin-top:.5rem;font-family:var(--font-mono);';
     document.querySelector('.form-submit').appendChild(el);
   }
   el.textContent = msg;

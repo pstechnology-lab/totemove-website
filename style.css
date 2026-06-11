@@ -706,13 +706,13 @@ details summary::-webkit-details-marker { display: none; }
 .faq-pill {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
+  padding: 8px 16px;
   background: transparent;
   color: var(--cyan);
   border: 1.5px solid var(--cyan);
   border-radius: 4px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 500;
@@ -787,12 +787,12 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .testimonial-pill {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
+  padding: 8px 16px;
   background: var(--amber);
   color: var(--navy);
   border-radius: 4px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 500;

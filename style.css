@@ -247,7 +247,7 @@ details summary::-webkit-details-marker { display: none; }
 
 .hero-from {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.05em;
   text-transform: uppercase;

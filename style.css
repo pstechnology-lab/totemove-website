@@ -563,12 +563,12 @@ details summary::-webkit-details-marker { display: none; }
 .stat-pill {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
+  padding: 8px 16px;
   background: var(--cyan);
   color: var(--navy);
   border-radius: 4px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 500;
@@ -577,7 +577,7 @@ details summary::-webkit-details-marker { display: none; }
 
 .stat-section-lbl {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--fg-mute);

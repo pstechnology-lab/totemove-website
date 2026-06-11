@@ -20,7 +20,10 @@
   <meta name="twitter:image" content="https://totemove.ca/logo.png" />
   <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="apple-touch-icon" href="/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://formspree.io" />
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"f04b742b38ae4cddaa2a935f19557f96"}'></script>
   <link rel="stylesheet" href="style.css" />
   <script type="application/ld+json">
   {
@@ -36,218 +39,191 @@
     "priceRange": "$119–$389",
     "currenciesAccepted": "CAD",
     "paymentAccepted": "Cash, Credit Card, E-Transfer",
-    "areaServed": [
-      {"@type": "City", "name": "Georgetown"},
-      {"@type": "City", "name": "Halton Hills"},
-      {"@type": "City", "name": "Acton"},
-      {"@type": "City", "name": "Brampton"},
-      {"@type": "City", "name": "Caledon"}
-    ],
-    "address": {"@type": "PostalAddress", "addressLocality": "Brampton", "addressRegion": "ON", "addressCountry": "CA"},
-    "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "08:00", "closes": "20:00"}
+    "areaServed": [{"@type":"City","name":"Georgetown"},{"@type":"City","name":"Halton Hills"},{"@type":"City","name":"Acton"},{"@type":"City","name":"Brampton"},{"@type":"City","name":"Caledon"}],
+    "address": {"@type":"PostalAddress","addressLocality":"Brampton","addressRegion":"ON","addressCountry":"CA"},
+    "openingHoursSpecification": {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"20:00"}
   }
   </script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header">
     <div class="container nav-inner">
-      <a class="logo" href="/">Tote<span>Move</span></a>
+      <a href="/"><img src="totemove-logo.png" alt="Tote Move" class="site-logo" width="160" height="44" /></a>
       <nav aria-label="Main navigation">
-        <a href="#how-it-works">How It Works</a>
-        <a href="#packages">Pricing</a>
-        <a href="#service-area">Service Area</a>
-        <a href="tel:+14168450290" class="nav-phone">(416) 845-0290</a>
-        <a href="#booking" class="btn btn-outline">Book Now</a>
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#packages" class="nav-link">Packages</a>
+        <a href="#locations" class="nav-link">Locations</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#booking" class="btn-nav">Book my move →</a>
       </nav>
       <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
     <div class="mobile-nav" hidden>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#packages">Pricing</a>
-      <a href="#service-area">Service Area</a>
-      <a href="tel:+14168450290">(416) 845-0290</a>
-      <a href="#booking">Book Now</a>
+      <a href="#how">How it works</a>
+      <a href="#packages">Packages</a>
+      <a href="#locations">Locations</a>
+      <a href="#faq">FAQ</a>
+      <a href="#booking">Book my move →</a>
     </div>
   </header>
+
   <main id="main-content">
+
     <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>Moving Tote Rentals in Georgetown — Delivered to Your&nbsp;Door.</h1>
-          <p class="hero-sub">We deliver industrial-strength moving totes and a dolly right to your Georgetown address. Whether you're moving within Halton Hills or heading elsewhere in the region, we make it simple. No cardboard, no hassle, flat-rate pricing.</p>
-          <a href="#booking" class="btn btn-primary btn-lg">Book Now</a>
-        </div>
-        <div class="hero-visual">
-          <img src="logo.png" alt="ToteMove — Rent Totes. Move Smarter." class="hero-logo" width="500" height="500" loading="eager" />
-        </div>
-      </div>
-    </section>
-    <section id="how-it-works" class="section-light">
-      <div class="container">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-sub">Three easy steps: you focus on the move, we handle the rest.</p>
-        <div class="steps">
-          <div class="step">
-            <div class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="20" width="48" height="32" rx="4" fill="#45B8E6" opacity=".15"/><rect x="8" y="20" width="48" height="32" rx="4" stroke="#45B8E6" stroke-width="3"/><path d="M20 20V16a4 4 0 018 0v4M36 20V16a4 4 0 018 0v4" stroke="#45B8E6" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="38" r="6" fill="#45B8E6"/><path d="M29 38l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="step-number">1</div>
-            <h3>We Deliver</h3>
-            <p>Choose your package and move date. We'll drop off clean, sturdy totes and a dolly at your Georgetown door, the day before your move.</p>
+      <div class="hero-kicker">TOTE MOVE &nbsp;/&nbsp; CA &nbsp;·&nbsp; SERVING PEEL · HALTON HILLS · DUFFERIN</div>
+      <div class="hero-inner">
+        <div class="hero-left">
+          <span class="hero-pill">SKIP THE CARDBOARD</span>
+          <h1>Moving Tote Rentals<br />in Georgetown — <span class="cyan">Delivered to Your Door.</span></h1>
+          <p class="hero-body">We deliver industrial-strength moving totes and a dolly right to your Georgetown address. Whether you're moving within Halton Hills or heading elsewhere in the region, we make it simple. No cardboard, no hassle, flat-rate pricing.</p>
+          <div class="hero-buttons">
+            <a href="#booking" class="btn-amber">Reserve totes →</a>
+            <a href="#packages" class="btn-ghost">See packages</a>
+            <span class="hero-from">From $119</span>
           </div>
-          <div class="step-arrow" aria-hidden="true">&#8594;</div>
-          <div class="step">
-            <div class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="28" width="40" height="24" rx="3" fill="#45B8E6" opacity=".15"/><rect x="12" y="28" width="40" height="24" rx="3" stroke="#45B8E6" stroke-width="3"/><path d="M22 28V18a4 4 0 018 0v10M34 28V22a4 4 0 018 0v6" stroke="#45B8E6" stroke-width="3" stroke-linecap="round"/><path d="M20 52l-6 6M44 52l6 6" stroke="#45B8E6" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="56" r="3" fill="#45B8E6"/><circle cx="44" cy="56" r="3" fill="#45B8E6"/></svg></div>
-            <div class="step-number">2</div>
-            <h3>You Move</h3>
-            <p>Pack at your own pace. Roll fully-loaded totes with your dolly. No heavy lifting needed. Take up to 7 days to complete your move.</p>
+          <div class="hero-sequence">
+            <span>PACK.</span><span class="hero-dot"></span><span>STACK.</span><span class="hero-dot"></span><span>MOVE.</span><span class="hero-dot"></span><span class="hero-done">DONE.</span>
           </div>
-          <div class="step-arrow" aria-hidden="true">&#8594;</div>
-          <div class="step">
-            <div class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 40l16-24 12 16 8-10 12 18H8z" fill="#45B8E6" opacity=".15" stroke="#45B8E6" stroke-width="3" stroke-linejoin="round"/><path d="M20 48v8M44 48v8" stroke="#45B8E6" stroke-width="3" stroke-linecap="round"/><path d="M32 16l-4 4 4 4 4-4-4-4z" fill="#45B8E6"/></svg></div>
-            <div class="step-number">3</div>
-            <h3>We Pick Up</h3>
-            <p>Leave the empty totes at your new place. We'll collect everything within the agreed window so you can focus on settling in.</p>
+        </div>
+        <div class="hero-photo-wrap">
+          <img src="outside-totes.png" alt="Stacked moving totes ready for delivery" width="600" height="520" loading="eager" />
+          <div class="hero-stat-badge">
+            <div class="hero-stat-num">400+</div>
+            <div class="hero-stat-lbl">Reuses per tote</div>
           </div>
         </div>
       </div>
     </section>
-    <section id="packages" class="section-teal">
-      <div class="container">
-        <h2 class="section-title">Simple, Flat-Rate Pricing</h2>
-        <p class="section-sub">No surprise fees. Dolly always included. HST extra.</p>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="pricing-label">Studio / 1-Bedroom</div>
-            <div class="pricing-price"><span class="price-dollar">$</span>119</div>
-            <ul class="pricing-features"><li>20 totes</li><li>1 dolly</li><li>7-day rental</li><li>Delivery &amp; pickup included</li></ul>
-            <a href="#booking" class="btn btn-white">Book This</a>
-          </div>
 
-          <div class="pricing-card">
-            <div class="pricing-label">1 Bedroom Plus</div>
-            <div class="pricing-price"><span class="price-dollar">$</span>149</div>
-            <ul class="pricing-features">
-              <li>30 totes</li>
-              <li>1 dolly</li>
-              <li>7-day rental</li>
-              <li>Delivery &amp; pickup included</li>
-            </ul>
-            <a href="#booking" class="btn btn-white">Book This</a>
-          </div>
-
-          <div class="pricing-card pricing-card--featured">
-            <div class="pricing-badge">Most Popular</div>
-            <div class="pricing-label">2-Bedroom</div>
-            <div class="pricing-price"><span class="price-dollar">$</span>189</div>
-            <ul class="pricing-features"><li>45 totes</li><li>1 dolly</li><li>7-day rental</li><li>Delivery &amp; pickup included</li></ul>
-            <a href="#booking" class="btn btn-primary">Book This</a>
-          </div>
-          <div class="pricing-card">
-            <div class="pricing-label">3-Bedroom</div>
-            <div class="pricing-price"><span class="price-dollar">$</span>229</div>
-            <ul class="pricing-features"><li>60 totes</li><li>1 dolly</li><li>7-day rental</li><li>Delivery &amp; pickup included</li></ul>
-            <a href="#booking" class="btn btn-white">Book This</a>
-          </div>
-          <div class="pricing-card">
-            <div class="pricing-label">4-Bedroom</div>
-            <div class="pricing-price"><span class="price-dollar">$</span>299</div>
-            <ul class="pricing-features"><li>80 totes</li><li>2 dollies</li><li>7-day rental</li><li>Delivery &amp; pickup included</li></ul>
-            <a href="#booking" class="btn btn-white">Book This</a>
-          </div>
-          <div class="pricing-card">
-            <div class="pricing-label">5-Bedroom</div>
-            <div class="pricing-price"><span class="price-dollar">$</span>389</div>
-            <ul class="pricing-features"><li>100 totes</li><li>2 dollies</li><li>7-day rental</li><li>Delivery &amp; pickup included</li></ul>
-            <a href="#booking" class="btn btn-white">Book This</a>
-          </div>
+    <section id="how" class="how">
+      <div class="container">
+        <span class="section-eyebrow eyebrow-amber">HOW IT WORKS</span>
+        <h2 class="section-h2">Three steps. <span class="cyan">Zero cardboard.</span></h2>
+        <div class="steps-grid">
+          <div class="step-card"><div class="step-num step-num--cyan">01</div><h3>We drop off</h3><p>7 days before move day, your totes and dolly arrive at your door. No taping. No assembling. No trips to the hardware store.</p></div>
+          <div class="step-card"><div class="step-num step-num--amber">02</div><h3>You pack</h3><p>Lid open. Stuff in. Lid shut. Stack like Tetris. Flat lids and same-size totes mean more fits in fewer truck trips.</p></div>
+          <div class="step-card"><div class="step-num step-num--cyan">03</div><h3>We pick up</h3><p>After your move, we collect every tote from your new place at a scheduled time. They go back into rotation — used 400+ times before retirement.</p></div>
         </div>
-        <p class="pricing-note">Need more totes or a longer rental? <a href="#booking">Contact us</a>, we're flexible.</p>
       </div>
     </section>
-    <section id="service-area" class="section-teal-light">
-      <div class="container">
-        <h2 class="section-title">We Serve These Communities</h2>
-        <p class="section-sub">Based in North Brampton, delivering across the region.</p>
-        <ul class="area-list">
-          <li><svg class="area-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#45B8E6"/></svg>Brampton</li>
-          <li><svg class="area-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#45B8E6"/></svg>Bolton</li>
-          <li><svg class="area-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#45B8E6"/></svg>Georgetown</li>
-          <li><svg class="area-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#45B8E6"/></svg>Orangeville</li>
-          <li><svg class="area-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#45B8E6"/></svg>Mississauga</li>
-          <li><svg class="area-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#45B8E6"/></svg>Acton</li>
-          <li><svg class="area-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#45B8E6"/></svg>Caledon</li>
-          <li><svg class="area-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#45B8E6"/></svg>Erin</li>
-        </ul>
-        <p class="area-note">Not sure if we cover your area? <a href="#booking">Ask us</a>, we're always happy to help.</p>
+
+    <section id="packages" class="packages">
+      <div class="packages-header">
+        <div><span class="section-eyebrow eyebrow-cyan">PACKAGES</span><h2 class="section-h2" style="margin-bottom:0">One price.<br /><span class="cyan">Everything in.</span></h2></div>
+        <p class="packages-sub">Delivery, pickup, totes, and a dolly are always included. No upsells, no per-mile fees.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pkg-card"><div class="pkg-label pkg-label--cyan">PACKAGE</div><h3 class="pkg-name">Studio / 1-Bed</h3><div class="pkg-price"><span class="pkg-dollar pkg-dollar--cyan">$</span><span class="pkg-amount">119</span></div><ul class="pkg-features"><li><span class="pkg-dot pkg-dot--cyan"></span>20 totes</li><li><span class="pkg-dot pkg-dot--cyan"></span>1 dolly</li><li><span class="pkg-dot pkg-dot--cyan"></span>7-day rental</li><li><span class="pkg-dot pkg-dot--cyan"></span>Delivery &amp; pickup</li></ul><a href="#booking" class="btn-pkg-cyan">Reserve →</a></div>
+        <div class="pkg-card"><div class="pkg-label pkg-label--cyan">PACKAGE</div><h3 class="pkg-name">1 Bedroom Plus</h3><div class="pkg-price"><span class="pkg-dollar pkg-dollar--cyan">$</span><span class="pkg-amount">149</span></div><ul class="pkg-features"><li><span class="pkg-dot pkg-dot--cyan"></span>30 totes</li><li><span class="pkg-dot pkg-dot--cyan"></span>1 dolly</li><li><span class="pkg-dot pkg-dot--cyan"></span>7-day rental</li><li><span class="pkg-dot pkg-dot--cyan"></span>Delivery &amp; pickup</li></ul><a href="#booking" class="btn-pkg-cyan">Reserve →</a></div>
+        <div class="pkg-card pkg-card--featured"><span class="pkg-badge">MOST POPULAR</span><div class="pkg-label pkg-label--amber">PACKAGE</div><h3 class="pkg-name">2-Bedroom</h3><div class="pkg-price"><span class="pkg-dollar pkg-dollar--amber">$</span><span class="pkg-amount">189</span></div><ul class="pkg-features"><li><span class="pkg-dot pkg-dot--amber"></span>45 totes</li><li><span class="pkg-dot pkg-dot--amber"></span>1 dolly</li><li><span class="pkg-dot pkg-dot--amber"></span>7-day rental</li><li><span class="pkg-dot pkg-dot--amber"></span>Delivery &amp; pickup</li></ul><a href="#booking" class="btn-pkg-amber">Reserve →</a></div>
+        <div class="pkg-card"><div class="pkg-label pkg-label--cyan">PACKAGE</div><h3 class="pkg-name">3-Bedroom</h3><div class="pkg-price"><span class="pkg-dollar pkg-dollar--cyan">$</span><span class="pkg-amount">229</span></div><ul class="pkg-features"><li><span class="pkg-dot pkg-dot--cyan"></span>60 totes</li><li><span class="pkg-dot pkg-dot--cyan"></span>1 dolly</li><li><span class="pkg-dot pkg-dot--cyan"></span>7-day rental</li><li><span class="pkg-dot pkg-dot--cyan"></span>Delivery &amp; pickup</li></ul><a href="#booking" class="btn-pkg-cyan">Reserve →</a></div>
+        <div class="pkg-card"><div class="pkg-label pkg-label--cyan">PACKAGE</div><h3 class="pkg-name">4-Bedroom</h3><div class="pkg-price"><span class="pkg-dollar pkg-dollar--cyan">$</span><span class="pkg-amount">299</span></div><ul class="pkg-features"><li><span class="pkg-dot pkg-dot--cyan"></span>80 totes</li><li><span class="pkg-dot pkg-dot--cyan"></span>2 dollies</li><li><span class="pkg-dot pkg-dot--cyan"></span>7-day rental</li><li><span class="pkg-dot pkg-dot--cyan"></span>Delivery &amp; pickup</li></ul><a href="#booking" class="btn-pkg-cyan">Reserve →</a></div>
+        <div class="pkg-card"><div class="pkg-label pkg-label--cyan">PACKAGE</div><h3 class="pkg-name">5-Bedroom</h3><div class="pkg-price"><span class="pkg-dollar pkg-dollar--cyan">$</span><span class="pkg-amount">389</span></div><ul class="pkg-features"><li><span class="pkg-dot pkg-dot--cyan"></span>100 totes</li><li><span class="pkg-dot pkg-dot--cyan"></span>2 dollies</li><li><span class="pkg-dot pkg-dot--cyan"></span>7-day rental</li><li><span class="pkg-dot pkg-dot--cyan"></span>Delivery &amp; pickup</li></ul><a href="#booking" class="btn-pkg-cyan">Reserve →</a></div>
+      </div>
+      <p class="pricing-note">Need more totes or a longer rental? <a href="#booking">Contact us</a> — we're flexible.</p>
+    </section>
+
+    <section class="stat-block">
+      <div class="stat-inner">
+        <div>
+          <span class="stat-pill">THE TURNING POINT</span>
+          <div class="stat-section-lbl">CARDBOARD</div>
+          <h2 class="stat-h2">Used once.<br />Then trashed.</h2>
+          <hr class="stat-rule" />
+          <div class="stat-section-lbl stat-section-lbl--amber">OUR TOTES</div>
+          <h2 class="stat-h2"><span class="cyan">Reused</span> <span class="amber">400+ times.</span></h2>
+          <p class="stat-tagline">Cheaper. Faster. Greener. All at once.</p>
+        </div>
+        <div><img src="garage.png" alt="Tote inventory ready for rental" class="stat-photo" width="600" height="480" loading="lazy" /></div>
       </div>
     </section>
-    <section id="faq" class="section-light">
+
+    <section class="testimonial">
+      <div class="testimonial-inner">
+        <span class="testimonial-pill">FROM A REAL MOVER</span>
+        <blockquote class="testimonial-quote">
+          "12 trips to Home Depot.<br />60 boxes. <span class="amber">Grandma's china broken.</span><br />There had to be a better way."
+        </blockquote>
+        <div class="testimonial-attr">— Steven, founder · the move that started it all</div>
+      </div>
+    </section>
+
+    <section id="locations" class="locations">
       <div class="container">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-sub">Everything you need to know before you book.</p>
+        <div class="locations-eyebrow">NOW SERVING</div>
+        <h2 class="locations-h2"><span class="cyan">8 towns,</span> one corridor.</h2>
+        <div class="city-buttons">
+          <a href="/brampton" class="city-btn">Brampton</a>
+          <a href="/caledon" class="city-btn">Caledon</a>
+          <a href="/georgetown" class="city-btn active">Georgetown</a>
+          <a href="/acton" class="city-btn">Acton</a>
+          <a href="/bolton" class="city-btn">Bolton</a>
+          <a href="/erin" class="city-btn">Erin</a>
+          <a href="/orangeville" class="city-btn">Orangeville</a>
+          <a href="/mississauga" class="city-btn">Mississauga (N)</a>
+        </div>
+        <p class="locations-sub">Home base: Mayfield &amp; Hurontario, North Brampton. <span class="highlight" id="location-sub-city">25 min from Georgetown.</span></p>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="faq-inner">
+        <div class="faq-left"><span class="faq-pill">FAQ</span><h2 class="faq-h2">Got<br />questions?</h2></div>
         <div class="faq-list">
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-1">How far in advance should I book?<span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-1" role="region"><p>We recommend booking at least 3–5 days in advance, especially for weekend move dates which fill up quickly. Same-week bookings are sometimes available — contact us to check.</p></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-2">How clean are the totes?<span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-2" role="region"><p>All totes are thoroughly cleaned and sanitized between every rental. We inspect each one before delivery to ensure it is in great condition.</p></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-3">What if I need more than 7 days?<span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-3" role="region"><p>No problem. Just contact us before your rental period ends and we will arrange an extension at a fair rate.</p></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-4">Do you deliver on weekends?<span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-4" role="region"><p>Yes, we deliver and pick up 7 days a week, including weekends and holidays. Weekend dates fill up faster, so reserve yours early.</p></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-5">What if a tote gets damaged?<span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-5" role="region"><p>Normal wear and tear is covered. If a tote is damaged beyond normal use, we will discuss it with you directly — no hidden fees.</p></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-6">Do I need to be home for delivery or pickup?<span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-6" role="region"><p>Not necessarily. Many customers leave instructions for a safe drop-off spot. We coordinate with you in advance.</p></div></div>
+          <details><summary>How many days before my move do you drop off?<span class="faq-icon">+</span></summary><p>7 days. That gives you plenty of time to pack in the evenings without panicking.</p></details>
+          <details><summary>How strong are the totes really?<span class="faq-icon">+</span></summary><p>Heavy-duty plastic. They don't sag, they don't rip, and grandma's china makes it. Each tote is reused 400+ times before retirement.</p></details>
+          <details><summary>What sizes are the totes?<span class="faq-icon">+</span></summary><p>25.2 × 15.5 × 11 inches, gray plastic, with attached flat lids. They stack like Tetris in your truck.</p></details>
+          <details><summary>Do you deliver on weekends?<span class="faq-icon">+</span></summary><p>Yes, we deliver and pick up 7 days a week, including weekends and holidays. Weekend dates do fill up faster, so we recommend reserving yours early.</p></details>
+          <details><summary>What if I need them longer than 7 days?<span class="faq-icon">+</span></summary><p>Discounted extended rental rates are available — great for renos and staging. Just ask when you book.</p></details>
+          <details><summary>Do I need to be home for delivery or pickup?<span class="faq-icon">+</span></summary><p>Not necessarily. Many customers leave instructions for a safe drop-off location. We coordinate with you in advance to make delivery and pickup as convenient as possible.</p></details>
         </div>
       </div>
     </section>
-    <section id="booking" class="section-light">
-      <div class="container">
-        <h2 class="section-title">Request a Booking in Georgetown</h2>
-        <p class="section-sub">Fill out the form and we'll get back to you within a few hours to confirm your date.</p>
-        <form class="booking-form" id="bookingForm" novalidate>
-          <div class="form-row">
-            <div class="form-group"><label for="name">Full Name <span class="required" aria-hidden="true">*</span></label><input type="text" id="name" name="name" autocomplete="name" required placeholder="Jane Smith" /><span class="field-error" id="name-error" role="alert"></span></div>
-            <div class="form-group"><label for="phone">Phone Number <span class="required" aria-hidden="true">*</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="(416) 845-0290" /><span class="field-error" id="phone-error" role="alert"></span></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="email">Email Address <span class="required" aria-hidden="true">*</span></label><input type="email" id="email" name="email" autocomplete="email" required placeholder="jane@example.com" /><span class="field-error" id="email-error" role="alert"></span></div>
-            <div class="form-group"><label for="home-size">Home Size <span class="required" aria-hidden="true">*</span></label><select id="home-size" name="home-size" required><option value="" disabled selected>Select your home size…</option><option value="studio">Studio / 1-Bedroom - $119</option><option value="1bed-plus">1 Bedroom Plus - $149</option><option value="2bed">2-Bedroom - $189</option><option value="3bed">3-Bedroom - $229</option><option value="4bed">4-Bedroom - $299</option><option value="5bed">5-Bedroom - $389</option><option value="other">Other / Not Sure</option></select><span class="field-error" id="home-size-error" role="alert"></span></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="move-date">Desired Move Date <span class="required" aria-hidden="true">*</span></label><input type="date" id="move-date" name="move-date" required /><span class="field-error" id="move-date-error" role="alert"></span></div>
-            <div class="form-group"><label for="city">City / Town</label><input type="text" id="city" name="city" placeholder="Georgetown" /></div>
-          </div>
-          <div class="form-group form-group--full"><label for="notes">Anything else we should know?</label><textarea id="notes" name="notes" rows="4" placeholder="e.g. elevator access, long driveway, special items…"></textarea></div>
-          <div class="form-submit">
-            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Reserve My Totes</button>
-            <p class="form-privacy">We'll only use your info to confirm your booking. No spam, ever.</p>
-          </div>
-          <div class="form-success" id="formSuccess" hidden>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#45B8E6" opacity=".1"/><path d="M7 12l4 4 6-7" stroke="#45B8E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="11" stroke="#45B8E6" stroke-width="2"/></svg>
-            <h3>Request Received!</h3>
-            <p>Thanks! We'll be in touch within a few hours to confirm your booking.</p>
-          </div>
-        </form>
+
+    <section id="booking" class="booking">
+      <div class="booking-intro">
+        <h2 class="booking-intro-h2">Request a <span class="cyan">booking in Georgetown.</span></h2>
+        <p>Fill out the form and we'll get back to you within a few hours to confirm your date.</p>
       </div>
+      <form class="booking-form" id="bookingForm" novalidate>
+        <div class="form-row">
+          <div class="form-group"><label for="name">Full Name <span class="required" aria-hidden="true">*</span></label><input type="text" id="name" name="name" autocomplete="name" required placeholder="Jane Smith" /><span class="field-error" id="name-error" role="alert"></span></div>
+          <div class="form-group"><label for="phone">Phone Number <span class="required" aria-hidden="true">*</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="(416) 845-0290" /><span class="field-error" id="phone-error" role="alert"></span></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="email">Email Address <span class="required" aria-hidden="true">*</span></label><input type="email" id="email" name="email" autocomplete="email" required placeholder="jane@example.com" /><span class="field-error" id="email-error" role="alert"></span></div>
+          <div class="form-group"><label for="home-size">Home Size <span class="required" aria-hidden="true">*</span></label><select id="home-size" name="home-size" required><option value="" disabled selected>Select your home size…</option><option value="studio">Studio / 1-Bedroom — $119</option><option value="1bed-plus">1 Bedroom Plus — $149</option><option value="2bed">2-Bedroom — $189</option><option value="3bed">3-Bedroom — $229</option><option value="4bed">4-Bedroom — $299</option><option value="5bed">5-Bedroom — $389</option><option value="other">Other / Not Sure</option></select><span class="field-error" id="home-size-error" role="alert"></span></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="move-date">Desired Move Date <span class="required" aria-hidden="true">*</span></label><input type="date" id="move-date" name="move-date" required /><span class="field-error" id="move-date-error" role="alert"></span></div>
+          <div class="form-group"><label for="city">City / Town</label><input type="text" id="city" name="city" placeholder="Georgetown" /></div>
+        </div>
+        <div class="form-group form-group--full"><label for="referral">Who referred you?</label><input type="text" id="referral" name="referral" placeholder="e.g. a friend, Google, Instagram…" /></div>
+        <div class="form-group form-group--full"><label for="notes">Anything else we should know?</label><textarea id="notes" name="notes" rows="4" placeholder="e.g. elevator access, long driveway, special items…"></textarea></div>
+        <div class="form-submit">
+          <button type="submit" class="btn-submit" id="submitBtn">Reserve My Totes →</button>
+          <p class="form-privacy">We'll only use your info to confirm your booking. No spam, ever.</p>
+        </div>
+        <div class="form-success" id="formSuccess" hidden>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#3FC1EC" opacity=".15"/><path d="M7 12l4 4 6-7" stroke="#3FC1EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="11" stroke="#3FC1EC" stroke-width="2"/></svg>
+          <h3>Request received!</h3>
+          <p>Thanks! We'll be in touch within a few hours to confirm your booking.</p>
+        </div>
+      </form>
     </section>
+
   </main>
+
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a class="logo logo--white" href="/">Tote<span>Move</span></a>
-        <p>Moving tote rentals in Brampton&nbsp;&amp;&nbsp;area.<br />Serving Brampton, Bolton, Georgetown,<br />Orangeville, Mississauga, Acton, Caledon &amp; Erin.</p>
-      </div>
-      <div class="footer-contact">
-        <h4>Get in Touch</h4>
-        <a href="tel:+14168450290">(416) 845-0290</a>
-        <a href="mailto:hello@totemove.ca">hello@totemove.ca</a>
-        <a href="https://totemove.ca" target="_blank" rel="noopener noreferrer">totemove.ca</a>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#packages">Pricing</a>
-        <a href="#service-area">Service Area</a>
-        <a href="#booking">Book Now</a>
-      </div>
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="totemove-logo.png" alt="Tote Move" class="footer-logo" width="48" height="48" loading="lazy" /><p>Rent totes. Move smarter. Reusable plastic tote rentals delivered to your door across Peel, Halton Hills, and Dufferin.</p></div>
+      <div class="footer-col"><span class="footer-col-head">Service</span><ul><li><a href="#packages">Packages</a></li><li><a href="#how">How it works</a></li><li><a href="#booking">Book a rental</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div class="footer-col"><span class="footer-col-head">Locations</span><ul><li><a href="/brampton">Brampton</a></li><li><a href="/caledon">Caledon</a></li><li><a href="/mississauga">Mississauga</a></li><li><a href="/bolton">Bolton</a></li><li><a href="/georgetown">Georgetown</a></li><li><a href="/orangeville">Orangeville</a></li></ul></div>
+      <div class="footer-col"><span class="footer-col-head">Get in touch</span><ul><li><a href="mailto:hello@totemove.ca">hello@totemove.ca</a></li><li><a href="tel:+14168450290">416-845-0290</a></li><li><a href="https://totemove.ca" target="_blank" rel="noopener noreferrer">totemove.ca</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><div class="container"><p>&copy; 2026 ToteMove. All rights reserved. Based in North Brampton, Ontario.</p></div></div>
+    <div class="footer-bottom"><span>© 2026 TOTE MOVE · NORTH BRAMPTON, ON</span><span>totemove.ca</span></div>
   </footer>
+
   <script src="main.js" defer></script>
 </body>
 </html>

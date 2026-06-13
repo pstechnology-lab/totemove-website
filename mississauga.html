@@ -198,7 +198,27 @@
         </div>
         <div class="form-row">
           <div class="form-group"><label for="move-date">Desired Move Date <span class="required" aria-hidden="true">*</span></label><input type="date" id="move-date" name="move-date" required /><span class="field-error" id="move-date-error" role="alert"></span></div>
-          <div class="form-group"><label for="city">City / Town</label><input type="text" id="city" name="city" placeholder="Mississauga" /></div>
+          <div class="form-group">
+            <label for="rental-days">How Many Days?</label>
+            <select id="rental-days" name="rental-days">
+              <option value="" disabled selected>Select rental length...</option>
+              <option value="7">7 days (standard)</option>
+              <option value="14">14 days (+1 week)</option>
+              <option value="21">21 days (+2 weeks)</option>
+              <option value="28">28 days (+3 weeks)</option>
+              <option value="other">Other — I'll ask</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dropoff-address">Drop Off Address</label>
+            <input type="text" id="dropoff-address" name="dropoff-address" placeholder="123 Main St, Brampton" />
+          </div>
+          <div class="form-group">
+            <label for="pickup-address">Pick Up Address</label>
+            <input type="text" id="pickup-address" name="pickup-address" placeholder="Same as drop off if unchanged" />
+          </div>
         </div>
         <div class="form-group form-group--full"><label for="referral">Who referred you?</label><input type="text" id="referral" name="referral" placeholder="e.g. a friend, Google, Instagram…" /></div>
         <div class="form-group form-group--full"><label for="notes">Anything else we should know?</label><textarea id="notes" name="notes" rows="4" placeholder="e.g. elevator access, long driveway, special items…"></textarea></div>

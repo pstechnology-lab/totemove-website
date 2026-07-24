@@ -86,7 +86,7 @@ details summary::-webkit-details-marker { display: none; }
 }
 .nav-link:hover { color: var(--cyan); }
 
-.nav-phone {
+.site-header nav .nav-phone {
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: 0.05em;
@@ -94,7 +94,7 @@ details summary::-webkit-details-marker { display: none; }
   text-decoration: none;
   transition: color var(--dur);
 }
-.nav-phone:hover { color: var(--cyan); }
+.site-header nav .nav-phone:hover { color: var(--cyan); }
 
 .btn-nav {
   display: inline-flex;

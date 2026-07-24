@@ -86,6 +86,16 @@ details summary::-webkit-details-marker { display: none; }
 }
 .nav-link:hover { color: var(--cyan); }
 
+.nav-phone {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--cyan);
+  text-decoration: none;
+  transition: color var(--dur);
+}
+.nav-phone:hover { color: var(--white); }
+
 .btn-nav {
   display: inline-flex;
   align-items: center;

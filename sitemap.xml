@@ -85,6 +85,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://totemove.ca/about</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://totemove.ca/privacy-policy</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>yearly</changefreq>

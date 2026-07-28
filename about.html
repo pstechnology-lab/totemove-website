@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About ToteMove | Steven Paiva, Founder — Brampton, ON</title>
+  <meta name="description" content="Steven Paiva started ToteMove after a move went wrong — 12 Home Depot trips, broken china, and a cardboard bill that didn't add up. Plastic tote rentals delivered across Brampton and the GTA west corridor." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://totemove.ca/about" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://totemove.ca/about" />
+  <meta property="og:title" content="About ToteMove | Steven Paiva, Founder — Brampton, ON" />
+  <meta property="og:description" content="Steven Paiva started ToteMove after a move went wrong — 12 Home Depot trips, broken china, and a cardboard bill that didn't add up." />
+  <meta property="og:image" content="https://totemove.ca/logo.png" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:site_name" content="ToteMove" />
+
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://totemove.ca/about#steven-paiva",
+    "name": "Steven Paiva",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "LocalBusiness",
+      "name": "ToteMove",
+      "url": "https://totemove.ca"
+    },
+    "url": "https://totemove.ca/about",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brampton",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    }
+  }
+  </script>
+
+  <style>
+    .about-header {
+      background: var(--navy-deep);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .about-header .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .about-header .logo span { color: var(--cyan); }
+    .about-header nav a {
+      color: var(--fg-mute);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+    .about-header nav a:hover { color: var(--white); }
+    .about-header .btn-book {
+      background: var(--amber);
+      color: var(--navy-deep);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      margin-left: 1.5rem;
+      transition: background 0.2s;
+    }
+    .about-header .btn-book:hover { background: var(--amber-deep); }
+
+    .about-hero {
+      background: var(--navy);
+      padding: 4rem 1.5rem 3.5rem;
+      text-align: center;
+    }
+    .about-hero .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .about-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      color: var(--white);
+      margin-bottom: 0.6rem;
+      line-height: 1.1;
+    }
+    .about-hero h1 span { color: var(--cyan); }
+    .about-hero .founder-title {
+      font-family: var(--font-body);
+      color: var(--fg-mute);
+      font-size: 1rem;
+    }
+
+    .about-body {
+      background: var(--off-white);
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .about-content {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .about-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--navy-deep);
+      margin: 2.5rem 0 0.75rem;
+      line-height: 1.2;
+    }
+    .about-content h2:first-child { margin-top: 0; }
+    .about-content p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--navy);
+      line-height: 1.75;
+      margin-bottom: 1.1rem;
+    }
+
+    .origin-quote {
+      background: var(--navy);
+      border-left: 4px solid var(--amber);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .origin-quote blockquote {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--white);
+      line-height: 1.5;
+      margin: 0 0 0.75rem;
+    }
+    .origin-quote blockquote .amber { color: var(--amber); }
+    .origin-quote cite {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--fg-mute);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .about-stat {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .about-stat .stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--cyan);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .about-stat .stat-label {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--fg-mute);
+      line-height: 1.35;
+    }
+
+    .about-cta {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .about-cta p { margin-bottom: 1.25rem; }
+    .about-cta .btn-amber {
+      display: inline-block;
+      background: var(--amber);
+      color: var(--navy-deep);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.75rem 2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: background 0.2s;
+    }
+    .about-cta .btn-amber:hover { background: var(--amber-deep); }
+
+    .about-footer {
+      background: var(--navy-deep);
+      border-top: 1px solid #1e2d4a;
+      padding: 1.5rem;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+    }
+    .about-footer a { color: var(--cyan); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .about-header nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="about-header">
+    <a href="/" class="logo">Tote<span>Move</span></a>
+    <nav>
+      <a href="/#packages">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+      <a href="/#booking" class="btn-book">Book a rental</a>
+    </nav>
+  </header>
+
+  <div class="about-hero">
+    <p class="eyebrow">The story behind ToteMove</p>
+    <h1>Steven <span>Paiva</span></h1>
+    <p class="founder-title">Founder, ToteMove &nbsp;&middot;&nbsp; Brampton, ON</p>
+  </div>
+
+  <div class="about-body">
+    <div class="about-content">
+
+      <h2>The move that started it all</h2>
+
+      <p>In 2023, Steven was helping his family move out of a house in North Brampton. He'd done this before. Budget a couple hours and a stack of boxes. What actually happened: three separate trips to Home Depot across two days, 60 boxes at $4 each, a full roll of tape gone before the kitchen was done, and a box full of his grandmother's china that collapsed when another box was stacked on top of it.</p>
+
+      <p>The china didn't make it. The cardboard math didn't add up either — $240 in boxes, tape, and a dolly rental that turned out not to include the dolly. At the end of it: a recycling pile that filled half the garage and the nagging feeling that this was a solved problem everywhere except here.</p>
+
+      <div class="origin-quote">
+        <blockquote>
+          "12 trips to Home Depot. 60 boxes.<br /><span class="amber">Grandma's china broken.</span><br />There had to be a better way."
+        </blockquote>
+        <cite>— Steven Paiva, founder &middot; the move that started it all</cite>
+      </div>
+
+      <p>There was. Reusable plastic moving totes already existed — they're what professional movers use internally, and what tote rental companies in the US had been doing for years. In 2024, Steven started ToteMove to bring that model to the Brampton corridor.</p>
+
+      <h2>What ToteMove is</h2>
+
+      <p>The model is simple: flat-rate rental that includes the totes, a dolly, and delivery to your door a week before your move. You pack. You move. We pick everything up after. No assembly, no tape, no disposal run, no second store trip.</p>
+
+      <p>The totes are heavy-duty plastic — the kind that doesn't flex when you load books, doesn't sag with a sweater folded wrong, and stacks four high in a moving truck without shifting. They're uniform in size, which means your truck packs tighter and nothing wobbles. Each tote holds up to 50 lb and snaps shut without tape.</p>
+
+      <p>ToteMove operates out of North Brampton and delivers to 10 towns across the GTA west corridor: Brampton, Caledon, Georgetown, Acton, Halton Hills, Bolton, Erin, Hillsburgh, Orangeville, and North Mississauga. Delivery and pickup are included in every package. No fuel surcharge, no hidden fees.</p>
+
+      <h2>The bigger idea</h2>
+
+      <p>Moving shouldn't require a project plan. The cardboard box model is expensive, wasteful, and fragile — and it's only the default because nothing better showed up at the right time and price. ToteMove is that alternative for this part of Ontario.</p>
+
+      <p>A 2-bedroom move costs roughly $280 in cardboard when you count boxes, tape, paper, dolly rental, and the disposal pile at the end. The same move rented through ToteMove costs $189, all in. That's $91 back in your pocket and nothing to break down or recycle.</p>
+
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="stat-num">10</span>
+          <span class="stat-label">towns served across the GTA west corridor</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">14</span>
+          <span class="stat-label">days rental window — pack and unpack at your own pace</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">$91</span>
+          <span class="stat-label">average savings vs cardboard for a 2-bedroom move</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">400+</span>
+          <span class="stat-label">reuses per tote before retirement</span>
+        </div>
+      </div>
+
+      <div class="about-cta">
+        <p>Got a move coming up? See packages for your area or reach out directly at <a href="mailto:hello@totemove.ca">hello@totemove.ca</a>.</p>
+        <a href="/#booking" class="btn-amber">Get a quote &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="about-footer">
+    <p>&copy; 2026 ToteMove &nbsp;&middot;&nbsp; Brampton, ON &nbsp;&middot;&nbsp; <a href="/">totemove.ca</a> &nbsp;&middot;&nbsp; <a href="/blog">Blog</a> &nbsp;&middot;&nbsp; <a href="/privacy-policy">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>

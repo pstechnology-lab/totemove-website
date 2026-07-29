@@ -1,8 +1,8 @@
 # IndexNow submission script — run after each deploy to notify Bing/DuckDuckGo
 # Usage: .\submit-indexnow.ps1
 
-$key  = "afa8f3fa80fc49f2b4d91f76ef7f68ae"
-$host = "totemove.ca"
+$key    = "afa8f3fa80fc49f2b4d91f76ef7f68ae"
+$domain = "totemove.ca"
 
 $urls = @(
   "https://totemove.ca/",
@@ -23,9 +23,9 @@ $urls = @(
 )
 
 $body = @{
-  host        = $host
+  host        = $domain
   key         = $key
-  keyLocation = "https://$host/$key.txt"
+  keyLocation = "https://$domain/$key.txt"
   urlList     = $urls
 } | ConvertTo-Json
 

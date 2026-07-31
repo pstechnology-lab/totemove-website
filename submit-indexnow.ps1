@@ -19,7 +19,9 @@ $urls = @(
   "https://totemove.ca/about",
   "https://totemove.ca/blog",
   "https://totemove.ca/blog/moving-totes-vs-cardboard-boxes",
-  "https://totemove.ca/blog/plastic-bins-vs-cardboard-boxes-moving"
+  "https://totemove.ca/blog/plastic-bins-vs-cardboard-boxes-moving",
+  "https://totemove.ca/blog/how-many-moving-bins-do-i-need",
+  "https://totemove.ca/blog/moving-checklist-brampton"
 )
 
 $body = @{

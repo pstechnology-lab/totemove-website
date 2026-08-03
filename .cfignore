@@ -1,0 +1,4 @@
+node_modules/
+.claude/
+*.ps1
+*.sh

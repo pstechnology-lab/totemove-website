@@ -132,7 +132,11 @@
       "Bash(curl -s -o /dev/null -w '%{http_code}' -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d '{\"host\":\"totemove.ca\",\"key\":\"afa8f3fa80fc49f2b4d91f76ef7f68ae\",\"keyLocation\":\"https://totemove.ca/afa8f3fa80fc49f2b4d91f76ef7f68ae.txt\",\"urlList\":[\"https://totemove.ca/gta\"]}')",
       "Bash(find /c/Users/pstec -name \"*.jpg\" -newer \"/c/Users/pstec/OneDrive/Documents/ToteMove/LandingPage/index.html\" 2>/dev/null | grep -v \".git\" | head -20)",
       "Bash(git -C \"C:/Users/pstec/OneDrive/Documents/ToteMove/LandingPage\" add \"blog/plastic-bins-vs-cardboard-boxes-moving.html\")",
-      "mcp__claude-in-chrome__select_browser"
+      "mcp__claude-in-chrome__select_browser",
+      "WebFetch(domain:www.reddit.com)",
+      "WebFetch(domain:old.reddit.com)",
+      "WebFetch(domain:www.movingwaldo.com)",
+      "WebFetch(domain:www.yelp.ca)"
     ]
   }
 }

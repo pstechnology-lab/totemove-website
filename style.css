@@ -3,6 +3,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
+  color-scheme: light;
   --navy:       #0E1B36;
   --navy-deep:  #08122A;
   --navy-soft:  #1A2949;

@@ -1,0 +1,410 @@
+{
+  "summary": {
+    "health_score": 51,
+    "business_type": "Service Area Business (SAB) — Moving tote/bin/box rental, Brampton ON",
+    "audit_date": "2026-07-26",
+    "top_findings": [
+      "'Moving bin' = garbage/dumpster in Canadian English — title tag targeting wrong SERP lane",
+      "Cloudflare AI Scrape Shield blocking GPTBot, ClaudeBot, Google-Extended (AI search invisible)",
+      "No privacy policy — PIPEDA compliance violation for form data collection",
+      "Blog not linked from main site nav — earns zero internal PageRank",
+      "Both blog posts cannibalizing each other (same topic, no cross-links)"
+    ],
+    "quick_wins": [
+      "Disable AI Scrape Shield in Cloudflare Dashboard (5 min — unlocks ChatGPT + AI Overviews)",
+      "Fix title tag: replace 'Moving Bin' with 'Moving Tote & Plastic Box' (5 min)",
+      "Add Blog link to main nav (5 min — immediately passes PageRank to blog)",
+      "Revert GBP to 'Moving Supply Store' primary category (5 min — correct competitive lane)",
+      "Add review link to all 10 city page footers (30 min — accelerates review velocity)"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 74,
+      "what_works": [
+        "HTTP→HTTPS 301 redirect confirmed",
+        "www→non-www 301 redirect confirmed",
+        "robots.txt valid, Googlebot/Bingbot allowed",
+        "All canonical tags present",
+        "HSTS enabled with preload directive",
+        "HTML payload 29.7 KB — well-sized",
+        "TTFB 170ms — Cloudflare edge caching working"
+      ],
+      "findings": [
+        {
+          "title": "halton-hills.html and hillsburgh.html are fully orphaned",
+          "severity": "High",
+          "description": "Both pages are in sitemap at priority 0.8 but receive zero internal links from any page. Both have wrong active-city markers (wrong city highlighted in nav).",
+          "recommendation": "Add both cities to Locations section and footer on all pages. Fix active class on each page."
+        },
+        {
+          "title": "Blog not linked from main site",
+          "severity": "High",
+          "description": "No page on the main site links to /blog, /blog/moving-totes-vs-cardboard-boxes, or /blog/plastic-bins-vs-cardboard-boxes-moving. Blog earns zero internally passed PageRank.",
+          "recommendation": "Add Blog link to main nav (desktop + mobile) and footer on all pages."
+        },
+        {
+          "title": "/blog canonical trailing slash mismatch",
+          "severity": "High",
+          "description": "blog/index.html canonical is https://totemove.ca/blog but Cloudflare serves a 307 at /blog/. Canonical points to a redirecting URL.",
+          "recommendation": "Change canonical in blog/index.html to https://totemove.ca/blog/"
+        },
+        {
+          "title": "HSTS max-age live is 180 days, not 365 days",
+          "severity": "Medium",
+          "description": "_headers specifies 365 days but Cloudflare dashboard overrides to 180 days. Live header includes preload directive but 180 days fails hstspreload.org minimum.",
+          "recommendation": "Cloudflare SSL/TLS → Edge Certificates → HSTS → set Max Age to 12 months."
+        },
+        {
+          "title": "Google Fonts loaded via CSS @import — render-blocking",
+          "severity": "Medium",
+          "description": "style.css line 1 is @import for Google Fonts, creating a two-hop blocking chain that delays LCP.",
+          "recommendation": "Remove @import from style.css. Add <link rel='stylesheet' href='https://fonts.googleapis.com/css2?...'> directly in <head> of all HTML files."
+        },
+        {
+          "title": "No IndexNow implementation",
+          "severity": "Medium",
+          "description": "Key file returns 404. Missing fast indexing notification to Bing, DuckDuckGo, Naver.",
+          "recommendation": "Generate key at bing.com/indexnow, deploy {key}.txt to repo root, POST updated URLs on each deploy."
+        },
+        {
+          "title": "lang='en' should be lang='en-CA'",
+          "severity": "Low",
+          "description": "All pages declare English without Canadian locale. Minor but improves locale signals.",
+          "recommendation": "Update <html lang='en'> to <html lang='en-CA'> on all 13 HTML files."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality (E-E-A-T)",
+      "score": 41,
+      "what_works": [
+        "Founder testimonial with real anecdote ('12 trips to Home Depot, Grandma's china broken')",
+        "Blog bylines with 'By Steven, Founder' attribution",
+        "GTA-specific pricing in blog post ($2-$5 per box) shows market familiarity",
+        "FAQ answers are specific and technically accurate"
+      ],
+      "findings": [
+        {
+          "title": "No About page",
+          "severity": "High",
+          "description": "No About page exists. Author name is just 'Steven' — Google cannot build a knowledge graph entity from a first name alone. Author bio missing from blog posts.",
+          "recommendation": "Create /about page with founder full name, brief bio, and founding story. Update Article schema author.name and author.url."
+        },
+        {
+          "title": "No privacy policy (PIPEDA violation)",
+          "severity": "Critical",
+          "description": "Booking form collects name, phone, email, and address. PIPEDA requires a publicly accessible privacy policy. Legal compliance issue.",
+          "recommendation": "Create /privacy-policy page and link from footer."
+        },
+        {
+          "title": "Blog Post 1 is too short — 560 words vs 1,500 minimum",
+          "severity": "High",
+          "description": "Moving totes vs cardboard boxes post covers the topic at surface level. Competitors have 1,200-2,500 word posts on the same topic.",
+          "recommendation": "Expand to 1,500+ words. Add: packing technique, eco angle, 14-day rental logistics, 3-4 FAQ questions."
+        },
+        {
+          "title": "Blog Post 2 is too short — 970 words vs 1,500 minimum",
+          "severity": "High",
+          "description": "Plastic bins vs cardboard post needs more depth to compete.",
+          "recommendation": "Expand to 1,500+ words. Add: moving-day timeline, item-by-item packing guide, Brampton scenario."
+        },
+        {
+          "title": "City pages are 95% duplicate content",
+          "severity": "High",
+          "description": "10 city pages share identical content except H1 and one hero paragraph. ~40-60 unique words per page. Google's doorway page guidance targets this pattern.",
+          "recommendation": "Add 150-250 words of unique local content per city page. Start with Brampton, Mississauga, Caledon."
+        },
+        {
+          "title": "Homepage vs /brampton keyword cannibalization",
+          "severity": "Critical",
+          "description": "Both pages target 'moving tote rentals Brampton' in their title tags. Google will rank one and suppress the other.",
+          "recommendation": "Change homepage title to regional framing ('Brampton, Peel Region & Halton Hills') or consolidate /brampton into homepage."
+        },
+        {
+          "title": "Zero authoritative external citations",
+          "severity": "High",
+          "description": "No external citations exist in either blog post. No industry directories linked. No press mentions. Domain is new with no backlinks.",
+          "recommendation": "Add one outbound citation per blog post to a credible source. Build citations on Yelp, YP, HomeStars, BBB."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 50,
+      "what_works": [
+        "Pricing visible in hero ('From $119')",
+        "6-tier packages clearly structured",
+        "Sticky nav with CTA on desktop",
+        "Phone number in nav and footer"
+      ],
+      "findings": [
+        {
+          "title": "'Moving bin' = garbage/dumpster bin in Canadian English",
+          "severity": "Critical",
+          "description": "SERPs for 'moving bin rental Brampton' return waste disposal companies (GTA Bins, Gorilla Bins), not moving supply services. Title tag leads with this term.",
+          "recommendation": "Replace 'Moving Bin' in title tag with 'Moving Tote & Plastic Box'. Keep 'bin' in body/FAQ where context clarifies meaning."
+        },
+        {
+          "title": "Homepage H1 has no keyword or city signal",
+          "severity": "High",
+          "description": "H1 is 'Rent totes. Move smarter.' — brand tagline with no location or service keyword.",
+          "recommendation": "Change to 'Moving Tote & Plastic Box Rentals — Delivered to Brampton & Area' or similar."
+        },
+        {
+          "title": "Business hours not visible on any page",
+          "severity": "Medium",
+          "description": "Hours exist in LocalBusiness schema (Mon-Sun 8am-8pm) but appear nowhere in visible page text.",
+          "recommendation": "Add 'Hours: Mon – Sun, 8 AM – 8 PM' to footer of all pages."
+        },
+        {
+          "title": "Blog index missing card for third blog post",
+          "severity": "Medium",
+          "description": "blog/index.html only shows 1 post card. plastic-bins-vs-cardboard-boxes-moving.html exists but is absent from the index.",
+          "recommendation": "Add a second post card to blog/index.html."
+        },
+        {
+          "title": "Google Review link on homepage only",
+          "severity": "High",
+          "description": "Review link present in homepage footer but absent from all 10 city page footers.",
+          "recommendation": "Add review link to footer of all 10 city pages."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 58,
+      "what_works": [
+        "All JSON-LD blocks pass syntax validation",
+        "LocalBusiness has complete NAP, priceRange, areaServed (8 cities), openingHoursSpecification, hasOfferCatalog",
+        "Article schema present on both blog posts",
+        "FAQPage schema present (note: retired from SERP features May 2026 but retained for AI value)"
+      ],
+      "findings": [
+        {
+          "title": "Article schema missing 'image' property — blocks rich results",
+          "severity": "Critical",
+          "description": "Google requires image (as ImageObject) on Article schema for Top Stories eligibility. Both blog posts are currently ineligible.",
+          "recommendation": "Add image: {\"@type\":\"ImageObject\",\"url\":\"https://totemove.ca/outside-totes.png\",\"width\":600,\"height\":520} to both Article blocks."
+        },
+        {
+          "title": "FAQPage retired by Google May 7, 2026",
+          "severity": "High",
+          "description": "All 3 FAQPage blocks produce zero SERP rich results. Homepage FAQPage also has ghost question mismatch with HTML.",
+          "recommendation": "Remove FAQPage from homepage. Keep on blog posts for potential AI crawler value."
+        },
+        {
+          "title": "Article @type should be BlogPosting",
+          "severity": "Medium",
+          "description": "Both blog posts use @type: 'Article'. BlogPosting is the correct Schema.org subtype for editorial blog content.",
+          "recommendation": "Change @type to 'BlogPosting' on both blog posts."
+        },
+        {
+          "title": "Missing BreadcrumbList on blog posts",
+          "severity": "Medium",
+          "description": "BreadcrumbList produces breadcrumb display in SERP snippets. Neither blog post has it.",
+          "recommendation": "Add BreadcrumbList JSON-LD to both blog posts. See findings/schema.md for ready-to-use blocks."
+        },
+        {
+          "title": "Missing WebSite schema on homepage",
+          "severity": "Medium",
+          "description": "No WebSite entity declared. Needed for knowledge graph and sitelinks.",
+          "recommendation": "Add {\"@type\":\"WebSite\",\"name\":\"ToteMove\",\"url\":\"https://totemove.ca\"} to index.html."
+        },
+        {
+          "title": "LocalBusiness @type is generic parent",
+          "severity": "Medium",
+          "description": "All 11 pages use @type: 'LocalBusiness'. Should use [\"LocalBusiness\",\"HomeAndConstructionBusiness\"].",
+          "recommendation": "Update @type on all 11 pages."
+        },
+        {
+          "title": "Missing geo coordinates in LocalBusiness schema",
+          "severity": "High",
+          "description": "For a SAB with no visible street address, geo coordinates are the primary geographic pin for proximity calculations.",
+          "recommendation": "Add {\"@type\":\"GeoCoordinates\",\"latitude\":43.73456,\"longitude\":-79.76543} to all LocalBusiness blocks."
+        },
+        {
+          "title": "Logo is plain URL string, not ImageObject",
+          "severity": "Low",
+          "description": "LocalBusiness 'logo' and publisher.logo in Article blocks are bare URL strings. Google requires ImageObject.",
+          "recommendation": "Wrap logo with {\"@type\":\"ImageObject\",\"url\":\"...\",\"width\":160,\"height\":44}."
+        }
+      ]
+    },
+    {
+      "name": "Performance (Core Web Vitals)",
+      "score": 40,
+      "what_works": [
+        "TTFB 170ms — Cloudflare edge caching HTML",
+        "CLS ~0.0 — all images have explicit width/height",
+        "INP ~70-100ms — PASS",
+        "main.js has defer attribute",
+        "Analytics beacon has defer",
+        "Cache-Control: max-age=31536000 on CSS/JS"
+      ],
+      "findings": [
+        {
+          "title": "LCP failing — estimated 3.5-5.5s on mobile (threshold: ≤2.5s)",
+          "severity": "Critical",
+          "description": "Hero image outside-totes.png is 1.1MB PNG. No WebP/AVIF. No preload hint. Google Fonts @import creates blocking chain before image can load.",
+          "recommendation": "1. Convert to WebP (≤250KB) + AVIF (≤150KB) via <picture> element. 2. Add <link rel='preload' as='image' href='outside-totes.webp'> in <head>. 3. Expected improvement: LCP 1.2-2.2s."
+        },
+        {
+          "title": "Google Fonts @import is render-blocking",
+          "severity": "High",
+          "description": "style.css line 1 is @import. Two-hop blocking chain: HTML → style.css → @import → fonts CSS → 10 WOFF2 files.",
+          "recommendation": "Remove @import from style.css. Add <link rel='stylesheet'> directly to <head> of all HTML files."
+        },
+        {
+          "title": "Logo PNG is 931KB for a 160×44px display",
+          "severity": "Medium",
+          "description": "totemove-logo.png is oversized for its display dimensions. Should be SVG or WebP at display size.",
+          "recommendation": "Replace with SVG (<5KB) or convert to WebP at 320×88px (~10KB)."
+        },
+        {
+          "title": "garage.png is 1.7MB — lazy loaded but unoptimized",
+          "severity": "Medium",
+          "description": "Lazy loading is correct but format is unoptimized. Target ≤300KB as WebP.",
+          "recommendation": "Convert to WebP/AVIF."
+        },
+        {
+          "title": "Image files missing from _headers cache rules",
+          "severity": "Medium",
+          "description": "_headers has rules for logo.png and logo.webp (which don't exist), but not for the three actual image files.",
+          "recommendation": "Add Cache-Control: public, max-age=31536000, immutable for outside-totes, garage, totemove-logo files."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness (GEO)",
+      "score": 39,
+      "what_works": [
+        "Static HTML — AI crawlers read full page on first fetch, no JS rendering issues",
+        "FAQPage schema with 7 Q&As",
+        "LocalBusiness schema with complete NAP + OfferCatalog",
+        "Blog H1s in question format matching natural language queries",
+        "Comparison tables are AI-parseable",
+        "Article schema with current dates and author/publisher",
+        "Origin story testimonial is human narrative LLMs use for brand summaries"
+      ],
+      "findings": [
+        {
+          "title": "Cloudflare AI Scrape Shield blocking GPTBot, ClaudeBot, Google-Extended",
+          "severity": "Critical",
+          "description": "Cloudflare injects Disallow rules into live robots.txt blocking ChatGPT, Claude AI, and Google AI Overviews. The repo robots.txt is clean — this is a dashboard setting override.",
+          "recommendation": "Cloudflare Dashboard → Security → Bots → AI Scrape Shield → Off. Then explicitly Allow these crawlers in robots.txt."
+        },
+        {
+          "title": "No llms.txt (404)",
+          "severity": "High",
+          "description": "llms.txt is an entity declaration for LLM crawlers. Returns 404.",
+          "recommendation": "Create /llms.txt with business description, URL list, contact info. See findings/geo.md for template."
+        },
+        {
+          "title": "FAQ answers too short for AI citation (20-55 words vs 134-167 optimal)",
+          "severity": "Medium",
+          "description": "Current FAQ answer length is below the AI citability window. Answers are unlikely to appear in Google AI Overviews or ChatGPT responses.",
+          "recommendation": "Expand top 3 FAQ answers to 130-160 words. Priority: 'What is a moving tote rental?', 'Are plastic bins better than cardboard?'"
+        },
+        {
+          "title": "Author name is first name only — cannot build knowledge graph entity",
+          "severity": "Medium",
+          "description": "Both Article schemas use author.name: 'Steven'. Knowledge graph cannot build an entity from a first name alone.",
+          "recommendation": "Add full surname to author.name in Article schema and blog bylines."
+        },
+        {
+          "title": "Pricing in CSS grid format, not extractable prose",
+          "severity": "Medium",
+          "description": "LLMs parse prose more reliably than CSS layout. Package pricing exists only in card format.",
+          "recommendation": "Add one sentence of prose pricing to homepage: 'ToteMove moving tote rentals in Brampton start at $119 for a studio/1-bedroom and go up to $389 for a 5-bedroom — delivery, pickup, totes, and dolly all included.'"
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 25,
+      "what_works": [
+        "All images have explicit width and height attributes (CLS protected)",
+        "Below-fold garage.png uses loading=lazy",
+        "Hero image uses loading=eager (correct)"
+      ],
+      "findings": [
+        {
+          "title": "All three images are unoptimized PNGs",
+          "severity": "Critical",
+          "description": "outside-totes.png (1.1MB), garage.png (1.7MB), totemove-logo.png (931KB). Combined payload: 3.7MB. No WebP, no AVIF, no srcset.",
+          "recommendation": "Convert all three to WebP + AVIF. Serve via <picture>. Targets: outside-totes ≤250KB, garage ≤300KB, logo ≤10KB (or SVG)."
+        },
+        {
+          "title": "No OG/social preview images created",
+          "severity": "Medium",
+          "description": "OG image points to logo.png for all pages including blog posts. Blog posts should have article-specific preview images.",
+          "recommendation": "Create 1200x630px preview images for both blog posts. Use Canva or similar."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "This week (before accepting bookings)",
+        "items": [
+          "Disable Cloudflare AI Scrape Shield",
+          "Fix title tag — remove 'Moving Bin', use 'Moving Tote & Plastic Box'",
+          "Add Blog link to main nav and footer",
+          "Create /privacy-policy page",
+          "Differentiate the two comparison blog posts + add cross-links"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 1-2",
+        "items": [
+          "Convert images to WebP/AVIF — LCP fix",
+          "Add preload hint for hero image",
+          "Fix halton-hills + hillsburgh orphaned pages",
+          "Add review link to all city page footers",
+          "Create /about page",
+          "Add image property to Article schema (unblocks rich results)",
+          "Remove FAQPage from homepage",
+          "Fix homepage H1 to include keyword + city",
+          "Revert GBP category to Moving Supply Store"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Schema",
+        "timeframe": "Weeks 2-4",
+        "items": [
+          "Expand both blog posts to 1,500+ words",
+          "Move Google Fonts from @import to <link> in HTML",
+          "Add BreadcrumbList + WebSite + BlogPosting schema",
+          "Add geo coordinates to all LocalBusiness schema",
+          "Fix /blog canonical trailing slash",
+          "Add visible business hours to all footers",
+          "Create /llms.txt",
+          "Update sitemap lastmod dates",
+          "Expand FAQ answers for AI citability"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Month 2 onwards",
+        "items": [
+          "Build citations: Yelp CA, Yellow Pages CA, 411.ca, HomeStars, BBB",
+          "Implement IndexNow for Bing fast indexing",
+          "Add unique content to city pages (Brampton + Mississauga first)",
+          "Publish 5 blog posts per content calendar",
+          "Collect Google reviews — target 1+ per 14 days",
+          "Set HSTS max-age to 12 months in Cloudflare",
+          "Pursue local press mention (Brampton Guardian)"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

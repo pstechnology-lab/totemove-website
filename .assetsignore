@@ -1,0 +1,12 @@
+node_modules/
+.claude/
+.git/
+wrangler.jsonc
+.assetsignore
+.cfignore
+*.ps1
+*.sh
+serve.js
+convert-images.js
+update-images.js
+submit-indexnow.ps1

@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://totemove.ca/blog</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -136,6 +136,12 @@
     <loc>https://totemove.ca/blog/plastic-tote-rental-vs-uhaul-brampton</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://totemove.ca/blog/leaving-the-city-moving-out-of-the-gta</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>

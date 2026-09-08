@@ -139,6 +139,110 @@
   }
   </script>
 
+  <style>
+    .reviews-strip {
+      background: #f7f8fa;
+      padding: 2.75rem 1.5rem 3rem;
+      border-bottom: 1px solid #e2e6ed;
+    }
+    .reviews-strip-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .reviews-strip-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+    .reviews-g-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .reviews-g-badge .g-icon {
+      font-size: 1.1rem;
+      font-weight: 700;
+      font-family: Arial, sans-serif;
+    }
+    .reviews-g-badge .g-icon span:nth-child(1) { color: #4285F4; }
+    .reviews-g-badge .g-icon span:nth-child(2) { color: #EA4335; }
+    .reviews-g-badge .g-icon span:nth-child(3) { color: #FBBC05; }
+    .reviews-g-badge .g-icon span:nth-child(4) { color: #4285F4; }
+    .reviews-g-badge .g-icon span:nth-child(5) { color: #34A853; }
+    .reviews-g-badge .g-icon span:nth-child(6) { color: #EA4335; }
+    .reviews-strip-score {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--navy-deep);
+      letter-spacing: 0.02em;
+    }
+    .reviews-strip-stars {
+      color: #FBBC05;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+    }
+    .reviews-strip-count {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: #6b7a99;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.25rem;
+    }
+    .review-card {
+      background: #fff;
+      border: 1px solid #e2e6ed;
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .review-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .review-card-stars { color: #FBBC05; font-size: 0.9rem; }
+    .review-card-src {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: #9aa3b5;
+      text-transform: uppercase;
+    }
+    .review-card-text {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: #2b3a5a;
+      line-height: 1.65;
+      flex: 1;
+    }
+    .review-card-author {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid #f0f2f6;
+    }
+    .review-card-name {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--navy-deep);
+    }
+    .review-card-badge {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.07em;
+      color: #9aa3b5;
+      text-transform: uppercase;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -204,6 +308,59 @@
             <div class="hero-stat-num">400+</div>
             <div class="hero-stat-lbl">Reuses per tote</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GOOGLE REVIEWS ===== -->
+    <section class="reviews-strip">
+      <div class="reviews-strip-inner">
+        <div class="reviews-strip-header">
+          <div class="reviews-g-badge">
+            <span class="g-icon"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span>
+          </div>
+          <span class="reviews-strip-score">5.0</span>
+          <span class="reviews-strip-stars">★★★★★</span>
+          <span class="reviews-strip-count">Google Reviews</span>
+        </div>
+        <div class="reviews-grid">
+
+          <div class="review-card">
+            <div class="review-card-top">
+              <span class="review-card-stars">★★★★★</span>
+              <span class="review-card-src">Google</span>
+            </div>
+            <p class="review-card-text">"Ordered online in a few simple steps. The trolley cart was very handy at a condo — stacking up the totes saved me a lot more space for bigger items. Saved me many hours not having to deal with cardboard boxes, and much easier on my 40+ year old lower back."</p>
+            <div class="review-card-author">
+              <span class="review-card-name">Vikram S.</span>
+              <span class="review-card-badge">Verified review</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-top">
+              <span class="review-card-stars">★★★★★</span>
+              <span class="review-card-src">Google</span>
+            </div>
+            <p class="review-card-text">"Amazing product!! Made moving so easy with no cardboard waste. Filled them to the brim and they were still easy to carry and sturdy. 10/10 would recommend!"</p>
+            <div class="review-card-author">
+              <span class="review-card-name">Julia T.</span>
+              <span class="review-card-badge">Verified review</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-top">
+              <span class="review-card-stars">★★★★★</span>
+              <span class="review-card-src">Google</span>
+            </div>
+            <p class="review-card-text">"Great help organizing my kids' move for college! Thanks for the good advice. Steve's professional and helpful. I would definitely recommend."</p>
+            <div class="review-card-author">
+              <span class="review-card-name">Anita M.</span>
+              <span class="review-card-badge">Local Guide · Verified review</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

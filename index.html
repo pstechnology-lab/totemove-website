@@ -243,8 +243,29 @@
     }
   </style>
 
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--navy-deep);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0 0 6px 6px;
+      text-decoration: none;
+      z-index: 9999;
+      transition: top 0.1s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+  </style>
+
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- ===== HEADER ===== -->
   <header class="site-header">

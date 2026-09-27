@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://totemove.ca/blog</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -153,6 +153,12 @@
   <url>
     <loc>https://totemove.ca/blog/where-to-rent-plastic-moving-totes-brampton</loc>
     <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://totemove.ca/blog/how-do-plastic-bin-rentals-work</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

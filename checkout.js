@@ -38,6 +38,7 @@ const ADDONS = [
   { id: 'priority-delivery', name: 'Priority Weekend Delivery',  price: 1500 },
 ];
 
+const HST_RATE = 0.13; // Ontario HST
 const EXTRA_TOTES_COUNT = 10;
 const EXTRA_WEEK_RATE_PER_TOTE = 100; // $1.00/tote/week, in cents
 const INCLUDED_WEEKS = 2;
@@ -168,11 +169,18 @@ function updateSummary() {
     addSummaryLine(`${addon.name} — ${totalWeeks} wks`, blanketsTotal);
   }
 
+  addSummaryLine('Subtotal', total, 'summary-subtotal');
+
+  const hst = Math.round(total * HST_RATE);
+  addSummaryLine('HST (13%)', hst, 'summary-tax');
+  total += hst;
+
   summaryTotal.textContent = fmt(total);
 }
 
-function addSummaryLine(name, price) {
+function addSummaryLine(name, price, extraClass) {
   const li = document.createElement('li');
+  if (extraClass) li.className = extraClass;
   li.innerHTML = `<span>${name}</span><span>${fmt(price)}</span>`;
   summaryLines.appendChild(li);
 }

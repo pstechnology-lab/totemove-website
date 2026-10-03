@@ -30,6 +30,7 @@ const ADDONS = {
   'priority-delivery': { name: 'Priority Weekend Delivery',     amount: 15 },
 };
 
+const HST_RATE = 0.13; // Ontario HST
 const EXTRA_TOTES_COUNT = 10;
 const EXTRA_WEEK_RATE_PER_TOTE = 1; // $1/tote/week
 const INCLUDED_WEEKS = 2;
@@ -136,6 +137,11 @@ export async function onRequestPost({ request, env }) {
     lineItems.push({ description: `${addon.name} — ${totalWeeks} wks`, amount: blanketsAmount });
     total += blanketsAmount;
   }
+
+  // Ontario HST, charged on the full order subtotal.
+  const hstAmount = Math.round(total * HST_RATE * 100) / 100;
+  lineItems.push({ description: 'HST (13%)', amount: hstAmount });
+  total = Math.round((total + hstAmount) * 100) / 100;
 
   let helcimRes;
   try {

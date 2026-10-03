@@ -1306,7 +1306,7 @@ select {
 .address-fieldset .form-row { margin-top: 1rem; }
 .address-fieldset .form-row:first-of-type { margin-top: 0.5rem; }
 .address-city-note {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--fg-mute);
   margin: 0.5rem 0 1rem;
 }

@@ -130,7 +130,7 @@ form.addEventListener('submit', e => {
 
 function resetSubmitBtn() {
   submitBtn.disabled = false;
-  submitBtn.textContent = 'Reserve My Totes →';
+  submitBtn.textContent = 'Send Request →';
 }
 
 function showFormError(msg) {

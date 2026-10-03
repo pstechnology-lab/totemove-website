@@ -134,7 +134,6 @@ const summaryTotal = document.getElementById('summaryTotal');
 function updateSummary() {
   summaryLines.innerHTML = '';
   updateWeeksHint();
-  updateSignLine();
 
   const pkg = PACKAGES.find(p => p.id === state.packageId);
   if (!pkg) {
@@ -202,47 +201,15 @@ sameAsDropoff.addEventListener('change', () => {
   if (el.tagName === 'SELECT') el.addEventListener('change', revalidate);
 });
 
-/* ===== SIGN & ACCEPT: LIVE CONFIRMATION LINE ===== */
-const signLine = document.getElementById('signLine');
-
-function formatAddress(numberEl, streetEl, unitEl, cityEl, provinceEl, postalEl) {
-  const number = numberEl.value.trim();
-  const street = streetEl.value.trim();
-  const unit = unitEl.value.trim();
-  const city = cityEl.value.trim();
-  const province = provinceEl.value.trim();
-  const postal = postalEl.value.trim();
-  if (!number || !street || !city) return '';
-  const line1 = unit ? `${number} ${street}, Unit ${unit}` : `${number} ${street}`;
-  const line2 = [city, province, postal].filter(Boolean).join(' ');
-  return `${line1}, ${line2}`;
-}
-
-function updateSignLine() {
-  const name = document.getElementById('co-name').value.trim();
-  const address = formatAddress(
-    document.getElementById('do-number'),
-    document.getElementById('do-street'),
-    document.getElementById('do-unit'),
-    document.getElementById('do-city'),
-    document.getElementById('do-province'),
-    document.getElementById('do-postal')
-  );
-  if (!name && !address) {
-    signLine.innerHTML = 'Signing as <strong>—</strong>';
-    return;
-  }
-  signLine.innerHTML = `Signing as <strong>${name || '—'}</strong>${address ? `, ${address}` : ''}`;
-}
-
-['co-name', 'do-number', 'do-street', 'do-unit', 'do-city', 'do-province', 'do-postal'].forEach(id => {
-  const el = document.getElementById(id);
-  if (el) el.addEventListener('input', updateSignLine);
-  if (el && el.tagName === 'SELECT') el.addEventListener('change', updateSignLine);
+/* ===== SIGN & ACCEPT: AUTO-FILL SIGNATURE NAME FROM STEP 4 ===== */
+const coSignature = document.getElementById('co-signature');
+let signatureTouched = false;
+coSignature.addEventListener('input', () => { signatureTouched = true; });
+document.getElementById('co-name').addEventListener('input', () => {
+  if (!signatureTouched) coSignature.value = document.getElementById('co-name').value;
 });
 
 updateSummary();
-updateSignLine();
 
 /* ===== FORM VALIDATION ===== */
 const minDate = new Date();
@@ -338,49 +305,77 @@ function validatePickup() {
   return valid;
 }
 
-function validateAgree() {
-  const el = document.getElementById('co-agree');
-  const errEl = document.getElementById('co-agree-error');
-  if (el.disabled) {
-    errEl.textContent = 'Please open and review both the Rental Agreement and Liability Waiver links above first.';
+/* ===== SIGN & ACCEPT: EACH CHECKBOX GATED BY ITS OWN DOCUMENT LINK ===== */
+function makeAgreementGate({ linkId, checkboxId, hintId, errorId, lockedHint, unlockedHint, requiredMsg }) {
+  const link = document.getElementById(linkId);
+  const checkbox = document.getElementById(checkboxId);
+  const hint = document.getElementById(hintId);
+  const errEl = document.getElementById(errorId);
+
+  link.addEventListener('click', () => {
+    checkbox.disabled = false;
+    hint.textContent = unlockedHint;
+  });
+
+  checkbox.addEventListener('change', () => validate());
+
+  function validate() {
+    if (checkbox.disabled) {
+      errEl.textContent = requiredMsg;
+      return false;
+    }
+    if (!checkbox.checked) {
+      errEl.textContent = requiredMsg;
+      return false;
+    }
+    errEl.textContent = '';
+    return true;
+  }
+
+  return validate;
+}
+
+const validateAgreeRental = makeAgreementGate({
+  linkId: 'rentalAgreementLink',
+  checkboxId: 'co-agree-rental',
+  hintId: 'agreeRentalHint',
+  errorId: 'co-agree-rental-error',
+  unlockedHint: 'Thanks — you can now check this box.',
+  requiredMsg: 'Please open and read the Rental Agreement, then check this box to continue.',
+});
+
+const validateAgreeWaiver = makeAgreementGate({
+  linkId: 'liabilityWaiverLink',
+  checkboxId: 'co-agree-waiver',
+  hintId: 'agreeWaiverHint',
+  errorId: 'co-agree-waiver-error',
+  unlockedHint: 'Thanks — you can now check this box.',
+  requiredMsg: 'Please open and read the Release of Liability and Assumption of Risk, then check this box to continue.',
+});
+
+function validateSignatureName() {
+  const el = document.getElementById('co-signature');
+  const errEl = document.getElementById('co-signature-error');
+  const value = el.value.trim();
+  const renterName = document.getElementById('co-name').value.trim();
+  if (!value) {
+    errEl.textContent = 'Please type your full legal name to sign.';
+    el.classList.add('invalid');
     return false;
   }
-  if (!el.checked) {
-    errEl.textContent = 'Please accept the rental agreement and liability waiver to continue.';
+  if (value.toLowerCase() !== renterName.toLowerCase()) {
+    errEl.textContent = 'This must match the full name entered in Step 4.';
+    el.classList.add('invalid');
     return false;
   }
   errEl.textContent = '';
+  el.classList.remove('invalid');
   return true;
 }
 
-document.getElementById('co-agree').addEventListener('change', validateAgree);
-
-/* ===== SIGN & ACCEPT: MUST OPEN BOTH DOCUMENTS FIRST ===== */
-const viewed = { rentalAgreement: false, liabilityWaiver: false };
-const agreeCheckbox = document.getElementById('co-agree');
-const agreeHint = document.getElementById('agreeHint');
-
-function updateAgreeAvailability() {
-  const bothViewed = viewed.rentalAgreement && viewed.liabilityWaiver;
-  agreeCheckbox.disabled = !bothViewed;
-  if (bothViewed) {
-    agreeHint.textContent = 'Thanks — you can now check the box below.';
-  } else if (viewed.rentalAgreement) {
-    agreeHint.textContent = 'Now open the Liability Waiver link above too.';
-  } else if (viewed.liabilityWaiver) {
-    agreeHint.textContent = 'Now open the Rental Agreement link above too.';
-  } else {
-    agreeHint.textContent = 'Open and fully read both documents to enable this check box.';
-  }
-}
-
-document.getElementById('rentalAgreementLink').addEventListener('click', () => {
-  viewed.rentalAgreement = true;
-  updateAgreeAvailability();
-});
-document.getElementById('liabilityWaiverLink').addEventListener('click', () => {
-  viewed.liabilityWaiver = true;
-  updateAgreeAvailability();
+document.getElementById('co-signature').addEventListener('blur', validateSignatureName);
+document.getElementById('co-signature').addEventListener('input', () => {
+  if (document.getElementById('co-signature').classList.contains('invalid')) validateSignatureName();
 });
 
 /* ===== SUBMIT / PAYMENT ===== */
@@ -439,9 +434,11 @@ form.addEventListener('submit', async e => {
   const packageValid = validatePackage();
   const elevatorValid = validateRadioGroup('dropoff-elevator', 'do-elevator-error');
   const pickupValid = validatePickup();
-  const agreeValid = validateAgree();
+  const agreeRentalValid = validateAgreeRental();
+  const agreeWaiverValid = validateAgreeWaiver();
+  const signatureValid = validateSignatureName();
 
-  if (!fieldsValid || !packageValid || !elevatorValid || !pickupValid || !agreeValid) {
+  if (!fieldsValid || !packageValid || !elevatorValid || !pickupValid || !agreeRentalValid || !agreeWaiverValid || !signatureValid) {
     const firstInvalid = form.querySelector('.invalid') || document.getElementById('packageOptions');
     firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
@@ -466,6 +463,7 @@ form.addEventListener('submit', async e => {
       pickup,
     },
     signature: {
+      name: document.getElementById('co-signature').value.trim(),
       agreedAt: new Date().toISOString(),
     },
   };

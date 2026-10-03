@@ -112,6 +112,9 @@ export async function onRequestPost({ request, env }) {
   if (!signature.agreedAt) {
     return json({ error: 'Please accept the rental agreement and liability waiver.' }, 400);
   }
+  if (!signature.name || signature.name.trim().toLowerCase() !== contact.name.trim().toLowerCase()) {
+    return json({ error: 'The typed signature name must match the renter name.' }, 400);
+  }
 
   const lineItems = [{ description: pkg.name, amount: pkg.amount }];
   let total = pkg.amount;

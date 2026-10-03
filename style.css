@@ -1421,7 +1421,6 @@ input[type="checkbox"]:disabled {
 .checkbox-option:has(input:disabled) { cursor: not-allowed; opacity: 0.6; }
 .checkbox-option input { flex-shrink: 0; margin-top: 2px; }
 
-.sign-line { font-size: 15px; color: var(--navy); margin-bottom: 0.5rem; }
 .sign-warning {
   font-size: 13px;
   font-weight: 700;

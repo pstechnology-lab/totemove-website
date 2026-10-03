@@ -370,7 +370,7 @@ function updateAgreeAvailability() {
   } else if (viewed.liabilityWaiver) {
     agreeHint.textContent = 'Now open the Rental Agreement link above too.';
   } else {
-    agreeHint.textContent = 'Open both documents above to enable this checkbox.';
+    agreeHint.textContent = 'Open and fully read both documents to enable this check box.';
   }
 }
 

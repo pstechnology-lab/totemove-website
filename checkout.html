@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+
+  <title>Book &amp; Pay Online | ToteMove Checkout</title>
+  <meta name="description" content="Build your tote rental order — pick a package, add extra features, choose how many weeks you need, sign your rental agreement, and pay securely by credit card." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://totemove.ca/checkout" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://totemove.ca/checkout" />
+  <meta property="og:title" content="Book &amp; Pay Online | ToteMove Checkout" />
+  <meta property="og:description" content="Build your tote rental order and pay securely by credit card." />
+  <meta property="og:image" content="https://totemove.ca/logo.png" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:site_name" content="ToteMove" />
+
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+  <link rel="preconnect" href="https://secure.helcim.app" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="/">
+        <picture><source srcset="totemove-logo.webp" type="image/webp" /><img src="totemove-logo.png" alt="Tote Move" class="site-logo" width="160" height="44" /></picture>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/#how" class="nav-link">How it works</a>
+        <a href="/#packages" class="nav-link">Packages</a>
+        <a href="/#faq" class="nav-link">FAQ</a>
+        <a href="tel:+16476972505" class="nav-phone">(647) 697-2505</a>
+        <a href="/checkout" class="btn-nav">Book &amp; pay online →</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" hidden>
+      <a href="/#how">How it works</a>
+      <a href="/#packages">Packages</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/checkout">Book &amp; pay online →</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== CHECKOUT HERO ===== -->
+    <section class="checkout-hero">
+      <div class="container">
+        <span class="hero-pill">SECURE CHECKOUT</span>
+        <h1>Build your order.<br /><span class="cyan">Pay online.</span></h1>
+        <p class="checkout-hero-body">Pick a package, add anything extra, tell us how long you need it, sign your rental agreement, and pay by card. We'll confirm your delivery date by text or email.</p>
+      </div>
+    </section>
+
+    <!-- ===== CHECKOUT FORM ===== -->
+    <section class="checkout-page">
+      <div class="container checkout-grid">
+
+        <form class="checkout-form-col" id="checkoutForm" novalidate>
+
+          <!-- STEP 1: PACKAGE -->
+          <div class="checkout-step">
+            <span class="checkout-step-badge">STEP 1 · REQUIRED</span>
+            <h2 class="checkout-step-h2">Choose your package</h2>
+            <div class="package-options" id="packageOptions" role="radiogroup" aria-required="true">
+              <!-- populated by checkout.js -->
+            </div>
+            <span class="field-error" id="package-error" role="alert"></span>
+          </div>
+
+          <!-- STEP 2: ADD-ONS -->
+          <div class="checkout-step">
+            <span class="checkout-step-badge">STEP 2 · OPTIONAL</span>
+            <h2 class="checkout-step-h2">Add extra features</h2>
+            <div class="addon-options" id="addonOptions">
+              <!-- populated by checkout.js -->
+            </div>
+          </div>
+
+          <!-- STEP 3: WEEKS -->
+          <div class="checkout-step">
+            <span class="checkout-step-badge">STEP 3 · RENTAL LENGTH</span>
+            <h2 class="checkout-step-h2">How many weeks?</h2>
+            <p class="checkout-step-note">Every package includes a 14-day (2-week) rental. Extra weeks are billed at $1 per tote, per week — so the rate depends on the package (and extra totes) you pick above. Any partial week is rounded up to a full week.</p>
+            <div class="weeks-stepper">
+              <button type="button" class="stepper-btn" id="weeksMinus" aria-label="Remove an extra week">−</button>
+              <div class="stepper-value">
+                <span class="stepper-num" id="weeksValue">0</span>
+                <span class="stepper-label">extra week(s)<br />beyond the included 2</span>
+              </div>
+              <button type="button" class="stepper-btn" id="weeksPlus" aria-label="Add an extra week">+</button>
+            </div>
+            <p class="checkout-step-hint" id="weeksRateHint" hidden></p>
+          </div>
+
+          <!-- STEP 4: DELIVERY DETAILS -->
+          <div class="checkout-step">
+            <span class="checkout-step-badge">STEP 4 · REQUIRED</span>
+            <h2 class="checkout-step-h2">Delivery details</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-name">Full Name <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="co-name" name="name" autocomplete="name" required placeholder="Jane Smith" />
+                <span class="field-error" id="co-name-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="co-phone">Phone Number <span class="required" aria-hidden="true">*</span></label>
+                <input type="tel" id="co-phone" name="phone" autocomplete="tel" required placeholder="(647) 697-2505" />
+                <span class="field-error" id="co-phone-error" role="alert"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                <input type="email" id="co-email" name="email" autocomplete="email" required placeholder="jane@example.com" />
+                <span class="field-error" id="co-email-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="co-move-date">Desired Move Date <span class="required" aria-hidden="true">*</span></label>
+                <input type="date" id="co-move-date" name="move-date" required />
+                <span class="field-error" id="co-move-date-error" role="alert"></span>
+              </div>
+            </div>
+
+            <!-- DROP-OFF ADDRESS -->
+            <fieldset class="address-fieldset">
+              <legend>Drop off address <span class="required" aria-hidden="true">*</span></legend>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="do-number">Street Number <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="do-number" name="dropoff-number" required placeholder="123" />
+                  <span class="field-error" id="do-number-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="do-street">Street Name <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="do-street" name="dropoff-street" required placeholder="Main St" />
+                  <span class="field-error" id="do-street-error" role="alert"></span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="do-unit">Unit # <span class="optional">(optional)</span></label>
+                  <input type="text" id="do-unit" name="dropoff-unit" placeholder="e.g. 204" />
+                </div>
+                <div class="form-group">
+                  <label for="do-city">City <span class="required" aria-hidden="true">*</span></label>
+                  <select id="do-city" name="dropoff-city" required>
+                    <option value="" disabled selected>Select your city…</option>
+                    <option>Brampton</option>
+                    <option>Caledon</option>
+                    <option>Georgetown</option>
+                    <option>Acton</option>
+                    <option>Halton Hills</option>
+                    <option>Bolton</option>
+                    <option>Erin</option>
+                    <option>Hillsburgh</option>
+                    <option>Orangeville</option>
+                    <option>Mississauga</option>
+                  </select>
+                  <span class="field-error" id="do-city-error" role="alert"></span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="do-province">Province <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="do-province" name="dropoff-province" required value="ON" />
+                  <span class="field-error" id="do-province-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="do-postal">Postal Code <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="do-postal" name="dropoff-postal" required placeholder="L6T 1A1" autocomplete="postal-code" />
+                  <span class="field-error" id="do-postal-error" role="alert"></span>
+                </div>
+              </div>
+              <div class="form-group form-group--full">
+                <span class="radio-group-label">Elevator access? <span class="required" aria-hidden="true">*</span></span>
+                <div class="radio-group" role="radiogroup" aria-label="Drop off elevator access">
+                  <label class="radio-option"><input type="radio" name="dropoff-elevator" value="yes" required /> Yes</label>
+                  <label class="radio-option"><input type="radio" name="dropoff-elevator" value="no" /> No</label>
+                </div>
+                <span class="field-error" id="do-elevator-error" role="alert"></span>
+              </div>
+              <p class="address-city-note">Don't see your city? We currently only service these 10 areas — call <a href="tel:+16476972505">(647) 697-2505</a> to check if we can help.</p>
+            </fieldset>
+
+            <!-- PICK-UP ADDRESS -->
+            <fieldset class="address-fieldset">
+              <legend>Pick up address <span class="required" aria-hidden="true">*</span></legend>
+              <label class="checkbox-option">
+                <input type="checkbox" id="pu-same" checked />
+                Pick-up location is the same as drop-off
+              </label>
+              <div id="pickupFields" hidden>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="pu-number">Street Number <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="pu-number" name="pickup-number" placeholder="123" />
+                    <span class="field-error" id="pu-number-error" role="alert"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="pu-street">Street Name <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="pu-street" name="pickup-street" placeholder="Main St" />
+                    <span class="field-error" id="pu-street-error" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="pu-unit">Unit # <span class="optional">(optional)</span></label>
+                    <input type="text" id="pu-unit" name="pickup-unit" placeholder="e.g. 204" />
+                  </div>
+                  <div class="form-group">
+                    <label for="pu-city">City <span class="required" aria-hidden="true">*</span></label>
+                    <select id="pu-city" name="pickup-city">
+                      <option value="" disabled selected>Select your city…</option>
+                      <option>Brampton</option>
+                      <option>Caledon</option>
+                      <option>Georgetown</option>
+                      <option>Acton</option>
+                      <option>Halton Hills</option>
+                      <option>Bolton</option>
+                      <option>Erin</option>
+                      <option>Hillsburgh</option>
+                      <option>Orangeville</option>
+                      <option>Mississauga</option>
+                    </select>
+                    <span class="field-error" id="pu-city-error" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="pu-province">Province <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="pu-province" name="pickup-province" value="ON" />
+                    <span class="field-error" id="pu-province-error" role="alert"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="pu-postal">Postal Code <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="pu-postal" name="pickup-postal" placeholder="L6T 1A1" autocomplete="postal-code" />
+                    <span class="field-error" id="pu-postal-error" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-group form-group--full">
+                  <span class="radio-group-label">Elevator access? <span class="required" aria-hidden="true">*</span></span>
+                  <div class="radio-group" role="radiogroup" aria-label="Pick up elevator access">
+                    <label class="radio-option"><input type="radio" name="pickup-elevator" value="yes" /> Yes</label>
+                    <label class="radio-option"><input type="radio" name="pickup-elevator" value="no" /> No</label>
+                  </div>
+                  <span class="field-error" id="pu-elevator-error" role="alert"></span>
+                </div>
+                <p class="address-city-note">Don't see your city? We currently only service these 10 areas — call <a href="tel:+16476972505">(647) 697-2505</a> to check if we can help.</p>
+              </div>
+            </fieldset>
+
+            <div class="form-group form-group--full">
+              <label for="co-notes">Anything else we should know?</label>
+              <textarea id="co-notes" name="notes" rows="3" placeholder="e.g. long driveway, special items…"></textarea>
+            </div>
+          </div>
+
+          <!-- STEP 5: SIGN & ACCEPT -->
+          <div class="checkout-step">
+            <span class="checkout-step-badge">STEP 5 · REQUIRED</span>
+            <h2 class="checkout-step-h2">Sign &amp; accept</h2>
+            <p class="checkout-step-note">Please read the <a href="/rental-agreement" target="_blank" rel="noopener">Rental Agreement</a> and <a href="/liability-waiver" target="_blank" rel="noopener">Liability Waiver</a>. Both apply to your rental.</p>
+            <p class="sign-line" id="signLine">Signing as <strong>—</strong></p>
+            <p class="sign-warning">This name and address must match the cardholder name and billing address on the card you pay with. A mismatch may cause Helcim to decline the payment.</p>
+            <div class="form-group form-group--full">
+              <label class="checkbox-option">
+                <input type="checkbox" id="co-agree" required />
+                I have read and electronically sign the ToteMove Rental Agreement and Liability Waiver as the renter named above.
+              </label>
+              <span class="field-error" id="co-agree-error" role="alert"></span>
+            </div>
+          </div>
+
+        </form>
+
+        <!-- ORDER SUMMARY -->
+        <aside class="order-summary">
+          <h3 class="order-summary-h3">Order summary</h3>
+          <ul class="summary-lines" id="summaryLines">
+            <li class="summary-empty">Choose a package to get started.</li>
+          </ul>
+          <div class="summary-total">
+            <span>Total (CAD)</span>
+            <span id="summaryTotal">$0</span>
+          </div>
+          <button type="submit" form="checkoutForm" class="btn-pay" id="payBtn">
+            <span id="payBtnLabel">Reserve &amp; Pay Now →</span>
+          </button>
+          <p class="summary-error" id="summaryError" role="alert" hidden></p>
+          <p class="summary-note">You'll be asked to accept the rental agreement and liability waiver before payment. Secure payment by Helcim. Cancel for free (refund or reschedule) until 48 hours before delivery.</p>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <picture><source srcset="totemove-logo.webp" type="image/webp" /><img src="totemove-logo.png" alt="Tote Move" class="footer-logo" width="48" height="48" loading="lazy" /></picture>
+        <p>Rent totes. Move smarter. Reusable plastic tote rentals delivered to your door across Peel, Halton Hills, and Dufferin.</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-head">Service</span>
+        <ul>
+          <li><a href="/#packages">Packages</a></li>
+          <li><a href="/checkout">Book &amp; pay online</a></li>
+          <li><a href="/#how">How it works</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/rental-agreement">Rental Agreement</a></li>
+          <li><a href="/liability-waiver">Liability Waiver</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-head">Get in touch</span>
+        <ul>
+          <li><a href="mailto:hello@totemove.ca">hello@totemove.ca</a></li>
+          <li><a href="tel:+16476972505">647-697-2505</a></li>
+          <li>Mon–Sun: 8am–8pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TOTE MOVE · BRAMPTON, ON</span>
+      <span>totemove.ca</span>
+    </div>
+  </footer>
+
+  <script src="checkout.js" defer></script>
+</body>
+</html>

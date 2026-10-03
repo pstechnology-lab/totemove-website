@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+
+  <title>Rental Agreement | ToteMove</title>
+  <meta name="description" content="ToteMove's Rental Agreement: payment terms, delivery and pickup, extensions, fees, and cancellation policy for tote and dolly rentals." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://totemove.ca/rental-agreement" />
+
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    .policy-header {
+      background: var(--navy-deep);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .policy-header .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .policy-header .logo span { color: var(--cyan); }
+    .policy-header nav a {
+      color: var(--fg-mute);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+    .policy-header nav a:hover { color: var(--white); }
+    .policy-header .btn-book {
+      background: var(--amber);
+      color: var(--navy-deep);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      margin-left: 1.5rem;
+      transition: background 0.2s;
+    }
+    .policy-header .btn-book:hover { background: var(--amber-deep); }
+
+    .policy-hero {
+      background: var(--navy);
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    .policy-hero .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .policy-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .policy-hero p {
+      font-family: var(--font-body);
+      color: var(--fg-mute);
+      font-size: 0.9rem;
+    }
+
+    .policy-body {
+      background: var(--off-white);
+      padding: 3rem 1.5rem 4rem;
+    }
+    .policy-content {
+      max-width: 760px;
+      margin: 0 auto;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--navy);
+    }
+    .policy-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--navy-deep);
+      margin: 2.25rem 0 0.75rem;
+      letter-spacing: 0.02em;
+    }
+    .policy-content h2:first-child { margin-top: 0; }
+    .policy-content p { margin-bottom: 1.2rem; }
+    .policy-content ul { margin: 0.5rem 0 1.2rem 1.25rem; }
+    .policy-content ul li { margin-bottom: 0.4rem; }
+    .policy-content a { color: var(--cyan); }
+    .policy-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.5rem 0 1.2rem;
+      font-size: 0.92rem;
+    }
+    .policy-content th, .policy-content td {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .policy-content th {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--fg-mute);
+    }
+    .policy-callout {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--cyan);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+    }
+
+    .policy-footer {
+      background: var(--navy-deep);
+      border-top: 1px solid #1e2d4a;
+      padding: 1.5rem;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--fg-faint);
+    }
+    .policy-footer a { color: var(--cyan); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .policy-header nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="policy-header">
+    <a href="/" class="logo">Tote<span>Move</span></a>
+    <nav>
+      <a href="/liability-waiver">Liability Waiver</a>
+      <a href="/checkout" class="btn-book">Book Now →</a>
+    </nav>
+  </header>
+
+  <div class="policy-hero">
+    <p class="eyebrow">Legal</p>
+    <h1>Rental Agreement</h1>
+    <p>Last updated: October 2026</p>
+  </div>
+
+  <div class="policy-body">
+    <div class="policy-content">
+
+      <p class="policy-callout">This Rental Agreement sets out the commercial terms for your ToteMove rental. It works together with the separate <a href="/liability-waiver">Liability Waiver</a> — both documents apply to your rental. You review and electronically sign both during checkout, before payment, using the same name and address as your booking.</p>
+
+      <h2>1. Payment Terms</h2>
+      <ul>
+        <li>Full package price is charged at booking, before delivery, using ToteMove's payment processor (Helcim).</li>
+        <li>ToteMove does not run a separate security deposit hold. Damage, loss, or missed pickup fees (Section 4) are invoiced separately after the rental period ends and are due on receipt.</li>
+        <li>Extension fees (Section 3) must be paid before the original scheduled pickup date to avoid a missed pickup fee.</li>
+        <li>All prices are in Canadian dollars (CAD).</li>
+      </ul>
+
+      <h2>2. Delivery &amp; Pickup</h2>
+      <ul>
+        <li>ToteMove delivers the totes and dolly to the drop off address on your order, on the agreed delivery date, and picks them up from the pick up address on the agreed pickup date.</li>
+        <li>The Client must ensure someone is present, or has arranged reasonable access, at both delivery and pickup. A missed pickup will incur the missed pickup fee in Section 4 and may extend the rental period until a new pickup is scheduled.</li>
+        <li>ToteMove currently services 10 towns: Brampton, Caledon, Georgetown, Acton, Halton Hills, Bolton, Erin, Hillsburgh, Orangeville, and Mississauga. Addresses outside these areas cannot be booked online — call <a href="tel:+16476972505">(647) 697-2505</a> for options.</li>
+      </ul>
+
+      <h2>3. Extensions</h2>
+      <ul>
+        <li>Rentals may be extended beyond the included rental days shown at checkout.</li>
+        <li>Extensions are billed in 7-day increments. Any partial week is rounded up to a full week.</li>
+        <li>The Client must request and pay for an extension before the original scheduled pickup date. Unpaid extensions are treated as a missed pickup.</li>
+      </ul>
+
+      <h2>4. Damage, Loss &amp; Missed Pickup Fees</h2>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Fee (CAD)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Tote rendered unusable (cracked, broken hinges, or otherwise beyond repair)</td><td>$40 each</td></tr>
+          <tr><td>Lost or unreturned tote (each)</td><td>$40 each</td></tr>
+          <tr><td>Missed pickup</td><td>$25</td></tr>
+          <tr><td>Extra dolly (if requested)</td><td>$25</td></tr>
+        </tbody>
+      </table>
+      <p>The $40 fee applies only to totes that are no longer usable after the rental, including cracked totes and totes with broken hinges. Normal wear and tear, minor scuffs, and surface marks from ordinary use are not charged.</p>
+      <p>Full damage, loss, injury, and release-of-liability terms are set out in the <a href="/liability-waiver">Liability Waiver</a>. In the event of a conflict between that document and this Agreement on damage or fee amounts, the Liability Waiver governs.</p>
+
+      <h2>5. Cancellation &amp; Rescheduling</h2>
+      <ul>
+        <li>Cancellations or reschedule requests made at least 48 hours before the scheduled delivery date receive a full refund or free reschedule.</li>
+        <li>Cancellations made less than 48 hours before the scheduled delivery date are non-refundable, but ToteMove will make reasonable efforts to reschedule where possible.</li>
+        <li>ToteMove reserves the right to reschedule delivery due to weather, vehicle issues, or circumstances beyond its control, with no charge to the Client.</li>
+        <li>ToteMove may waive or shorten the 48-hour window at its discretion for referral partner clients or repeat clients.</li>
+      </ul>
+
+      <h2>6. Equipment &amp; Insurance</h2>
+      <ul>
+        <li>ToteMove carries commercial insurance covering its rental operations. This Agreement and the Liability Waiver govern the allocation of risk between ToteMove and the Client during the rental period.</li>
+        <li>This Agreement is not a substitute for the Liability Waiver. Both must be accepted before totes are delivered.</li>
+      </ul>
+
+      <h2>7. General Terms</h2>
+      <ul>
+        <li>This Agreement is governed by the laws of the Province of Ontario and the applicable federal laws of Canada.</li>
+        <li>If any provision of this Agreement is found invalid or unenforceable, the remaining provisions remain in effect.</li>
+        <li>This Agreement, together with the Liability Waiver, constitutes the entire agreement between ToteMove and the Client for this rental.</li>
+      </ul>
+
+      <h2>8. Acceptance</h2>
+      <p>By checking the box at checkout and typing your name as instructed, you electronically sign and agree to the terms of this Rental Agreement and the Liability Waiver. We record the name, address, timestamp, and IP address associated with that acceptance as our record of your signature.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this agreement:</p>
+      <ul>
+        <li>Email: <a href="mailto:hello@totemove.ca">hello@totemove.ca</a></li>
+        <li>Phone: <a href="tel:+16476972505">(647) 697-2505</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <footer class="policy-footer">
+    <p>&copy; 2026 ToteMove &nbsp;·&nbsp; Brampton, ON &nbsp;·&nbsp; <a href="/">totemove.ca</a> &nbsp;·&nbsp; <a href="/liability-waiver">Liability Waiver</a> &nbsp;·&nbsp; <a href="/privacy-policy">Privacy Policy</a></p>
+    <p style="margin-top:0.5rem;font-size:0.75rem;">Site hosted and managed by <a href="https://pstechnology.tech" target="_blank" rel="noopener noreferrer">pstechnology.tech</a></p>
+  </footer>
+
+</body>
+</html>

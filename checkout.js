@@ -341,6 +341,10 @@ function validatePickup() {
 function validateAgree() {
   const el = document.getElementById('co-agree');
   const errEl = document.getElementById('co-agree-error');
+  if (el.disabled) {
+    errEl.textContent = 'Please open and review both the Rental Agreement and Liability Waiver links above first.';
+    return false;
+  }
   if (!el.checked) {
     errEl.textContent = 'Please accept the rental agreement and liability waiver to continue.';
     return false;
@@ -350,6 +354,34 @@ function validateAgree() {
 }
 
 document.getElementById('co-agree').addEventListener('change', validateAgree);
+
+/* ===== SIGN & ACCEPT: MUST OPEN BOTH DOCUMENTS FIRST ===== */
+const viewed = { rentalAgreement: false, liabilityWaiver: false };
+const agreeCheckbox = document.getElementById('co-agree');
+const agreeHint = document.getElementById('agreeHint');
+
+function updateAgreeAvailability() {
+  const bothViewed = viewed.rentalAgreement && viewed.liabilityWaiver;
+  agreeCheckbox.disabled = !bothViewed;
+  if (bothViewed) {
+    agreeHint.textContent = 'Thanks — you can now check the box below.';
+  } else if (viewed.rentalAgreement) {
+    agreeHint.textContent = 'Now open the Liability Waiver link above too.';
+  } else if (viewed.liabilityWaiver) {
+    agreeHint.textContent = 'Now open the Rental Agreement link above too.';
+  } else {
+    agreeHint.textContent = 'Open both documents above to enable this checkbox.';
+  }
+}
+
+document.getElementById('rentalAgreementLink').addEventListener('click', () => {
+  viewed.rentalAgreement = true;
+  updateAgreeAvailability();
+});
+document.getElementById('liabilityWaiverLink').addEventListener('click', () => {
+  viewed.liabilityWaiver = true;
+  updateAgreeAvailability();
+});
 
 /* ===== SUBMIT / PAYMENT ===== */
 const form = document.getElementById('checkoutForm');

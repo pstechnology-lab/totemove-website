@@ -271,14 +271,15 @@
           <div class="checkout-step">
             <span class="checkout-step-badge">STEP 5 · REQUIRED</span>
             <h2 class="checkout-step-h2">Sign &amp; accept</h2>
-            <p class="checkout-step-note">Please read the <a href="/rental-agreement" target="_blank" rel="noopener">Rental Agreement</a> and <a href="/liability-waiver" target="_blank" rel="noopener">Liability Waiver</a>. Both apply to your rental.</p>
+            <p class="checkout-step-note">Please read the <a href="/rental-agreement" target="_blank" rel="noopener" id="rentalAgreementLink">Rental Agreement</a> and <a href="/liability-waiver" target="_blank" rel="noopener" id="liabilityWaiverLink">Liability Waiver</a>. Both apply to your rental.</p>
             <p class="sign-line" id="signLine">Signing as <strong>—</strong></p>
             <p class="sign-warning">This name and address must match the cardholder name and billing address on the card you pay with. A mismatch may cause Helcim to decline the payment.</p>
             <div class="form-group form-group--full">
-              <label class="checkbox-option">
-                <input type="checkbox" id="co-agree" required />
+              <label class="checkbox-option" id="agreeLabel">
+                <input type="checkbox" id="co-agree" required disabled />
                 I have read and electronically sign the ToteMove Rental Agreement and Liability Waiver as the renter named above.
               </label>
+              <p class="checkout-step-hint" id="agreeHint">Open both documents above to enable this checkbox.</p>
               <span class="field-error" id="co-agree-error" role="alert"></span>
             </div>
           </div>

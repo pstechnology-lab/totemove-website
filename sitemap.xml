@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://totemove.ca/blog/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -128,7 +128,7 @@
   </url>
   <url>
     <loc>https://totemove.ca/blog/moving-checklist-mississauga</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -165,6 +165,11 @@
   <url>
     <loc>https://totemove.ca/blog/are-rented-plastic-moving-boxes-clean</loc>
     <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>  <url>
+    <loc>https://totemove.ca/blog/moving-in-south-mississauga</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
